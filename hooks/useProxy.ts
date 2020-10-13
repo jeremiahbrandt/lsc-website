@@ -1,3 +1,6 @@
 import Proxy from "./useDevelopmentProxy"
+import ProxyInterface from "../interfaces/ProxyInterface"
 
-export default Proxy
+const selectedProxy: ProxyInterface = Proxy
+
+export default selectedProxy
