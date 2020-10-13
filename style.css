@@ -76,3 +76,12 @@ main {
 .contact-form #message-input {
     grid-area: messageInput;
 }
+
+footer {
+    display: grid;
+    justify-content: center;
+}
+
+.alert-signup h1 {
+    font-size: 20px;   
+}
