@@ -1,4 +1,5 @@
 import Proxy from "../hooks/useProxy"
+import styles from "./"
 
 const Navigation = () => {
     const data = Proxy().getNavigationLinks()

@@ -1,0 +1,78 @@
+:root {
+    --contact-form-border: brown;
+    
+    --contact-form-bg: #caf0e7;
+  }
+
+main {
+    display: grid;
+    justify-items: center;
+}
+
+.contact-form {
+    border-radius: 10px;
+    border: 1px solid var(--contact-form-border);
+    background-color: var(--contact-form-bg);
+    max-width: 750px;
+    width: 100%;
+    display: grid;
+    grid-template: 
+        "title title" 70px 
+        "nameLabel nameInput" 50px
+        "phoneLabel phoneInput" 50px
+        "emailLabel emailInput" 50px
+        "messageLabel messageInput" 50px
+        "submitButton submitButton" 40px
+        /3fr 5fr;
+    grid-auto-rows: 50px;
+    grid-row-gap: 10px;
+    text-align: right;
+    padding: 10px 20px 10px 20px;
+}
+
+.contact-form input, .contact-form textarea {
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.contact-form label {
+    display: grid;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.contact-form input[type="submit"] {
+    grid-area: submitButton;
+    width: 200px;
+    justify-self: center;
+}
+
+.contact-form h1 {
+    grid-area: title;
+    text-align: center;
+    font-size: 30px;
+}
+.contact-form #name-label {
+    grid-area: nameLabel;
+}
+.contact-form #name-input {
+    grid-area: nameInput;
+}
+.contact-form #phone-label {
+    grid-area: phoneLabel;
+}
+.contact-form #phone-input {
+    grid-area: phoneInput;
+}
+.contact-form #email-label {
+    grid-area: emailLabel;
+}
+.contact-form #email-input {
+    grid-area: emailInput;
+}
+.contact-form #message-label {
+    grid-area: messageLabel;
+}
+.contact-form #message-input {
+    grid-area: messageInput;
+}
