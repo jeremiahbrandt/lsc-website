@@ -3,20 +3,21 @@ import NavigationData from '../interfaces/NavigationData';
 import ProxyInterface from "../interfaces/ProxyInterface"
 
 const Proxy = (): ProxyInterface => {
-    const HOME_URL="localhost:8080"
+    const PORT="3000"
+    const HOME_URL=`localhost:${PORT}`
     const getNavigationLinks = () => {
         const dummyData: NavigationData = [
             {
                 name: "Home",
-                url: HOME_URL
+                url: "/"
             }, 
             {
                 name: "About",
-                url: `${HOME_URL}/about`
+                url: "/about"
             },
             {
                 name: "Contact",
-                url: `${HOME_URL}/contact`
+                url: "/contact"
             }
         ]
 

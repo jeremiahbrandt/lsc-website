@@ -1,12 +1,12 @@
 import Proxy from "../hooks/useProxy"
-import styles from "./"
+import Link from 'next/link'
 
 const Navigation = () => {
     const data = Proxy().getNavigationLinks()
     return (
         <nav>
             {
-                data.map(entry => <a href={entry.url}>{entry.name}</a>)
+                data.map(entry => <Link href={entry.url}><a>{entry.name}</a></Link>)
             }
         </nav>
     )
