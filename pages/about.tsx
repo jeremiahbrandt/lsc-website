@@ -3,7 +3,7 @@ import Layout from "../components/Layout"
 import Proxy from "../hooks/useProxy"
 
 const aboutPage = () => {
-    const data = Proxy().getInformationPageData()
+    const data = Proxy.getInformationPageData()
     return (
         <Layout>
             <span className="phone">Phone Number: {data.phoneNumber}</span>
