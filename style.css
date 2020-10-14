@@ -1,15 +1,24 @@
 :root {
+    --main-color: black;
     --contact-form-border: brown;
-    
     --contact-form-bg: #caf0e7;
+    --contact-form-color: inherit;
+    --footer-bg: #eb1919;
+    --footer-bg-color: inherit;
+    --alert-signup-bg: #3a271e;
+    --alert-signup-color: inherit;
+    --copyright-bg: #b15124;
+    --copyright-color: inherit;
   }
 
 main {
     display: grid;
     justify-items: center;
+    color: var(--main-color);
 }
 
 .contact-form {
+    color: var(--contact-form-color);
     border-radius: 10px;
     border: 1px solid var(--contact-form-border);
     background-color: var(--contact-form-bg);
@@ -78,10 +87,45 @@ main {
 }
 
 footer {
+    background-color: var(--footer-bg);
     display: grid;
     justify-content: center;
 }
 
 .alert-signup h1 {
     font-size: 20px;   
+    text-align: center;
+}
+
+.alert-signup {
+    background-color: var(--alert-signup-bg);
+}
+
+.alert-signup form {
+    display: grid;
+    grid-template: 
+        "selection input"35px
+        "submit submit"30px
+        / 2fr 11fr; 
+}
+
+.alert-signup select {
+    grid-area: selection;
+}
+
+.alert-signup input[type="email"], .alert-signup input[type="tel"] {
+    grid-area: input;
+}
+
+.alert-signup input[type="submit"] {
+    grid-area: submit;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 140px;
+    justify-self: center;
+}
+
+.copyright {
+    background-color: var(--copyright-bg);
+    color: var(--copyright-color);
 }
