@@ -2,7 +2,7 @@ import Proxy from "../hooks/useProxy"
 import Link from 'next/link'
 
 const Navigation = () => {
-    const data = Proxy().getNavigationLinks()
+    const data = Proxy.getNavigationLinks()
     return (
         <nav>
             {

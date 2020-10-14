@@ -1,7 +1,7 @@
 interface InformationPageData {
     phoneNumber: string
     email: string
-    hourOfOperation: string
+    hoursOfOperation: string
 }
 
 export default InformationPageData

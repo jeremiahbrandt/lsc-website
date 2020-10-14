@@ -27,8 +27,9 @@ const Proxy = (): ProxyInterface => {
     const getInformationPageData = (): InformationPageData => {
         const phoneNumber = "(123) 456-7890"
         const email = "johndoe@example.com"
+        const hoursOfOperation = ""
 
-        return {phoneNumber, email}
+        return {phoneNumber, email, hoursOfOperation}
     }
 
     return {getNavigationLinks, getInformationPageData}

@@ -1,6 +1,6 @@
 interface NavigationLink {
-    name: () => string,
-    url: () => string
+    name: string,
+    url: string
 }
 
 type NavigationData = NavigationLink[]
