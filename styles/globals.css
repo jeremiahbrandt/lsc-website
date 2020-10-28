@@ -14,3 +14,19 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.slideshow {
+  width: 750px;
+  height: 400px;
+  overflow-y: hidden;
+  /*overflow-x: hidden;*/
+}
+
+.viewport {
+  width: 3750px;
+}
+
+.slide {
+  position: absolute;
+  transition: translate 2s;
+}

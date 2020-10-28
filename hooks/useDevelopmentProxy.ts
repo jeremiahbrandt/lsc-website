@@ -1,6 +1,7 @@
 import InformationPageData from '../interfaces/InformationPageData';
 import NavigationData from '../interfaces/NavigationData';
 import ProxyInterface from "../interfaces/ProxyInterface"
+import {slideshowItem} from "../interfaces/SlideshowItem";
 
 const Proxy = (): ProxyInterface => {
     const PORT="3000"
@@ -32,7 +33,36 @@ const Proxy = (): ProxyInterface => {
         return {phoneNumber, email, hoursOfOperation}
     }
 
-    return {getNavigationLinks, getInformationPageData}
+    const getSlideshowFiles = (): slideshowItem[] => {
+        return [
+            {
+                fileLocation: "/slideshow/1.png",
+                default: "Slide 1"
+            },
+            {
+                fileLocation: "/slideshow/2.png",
+                default: "Slide 2"
+            },
+            {
+                fileLocation: "/slideshow/3.png",
+                default: "Slide 3"
+            },
+            {
+                fileLocation: "/slideshow/4.png",
+                default: "Slide 4"
+            },
+            {
+                fileLocation: "/slideshow/5.png",
+                default: "Slide 5"
+            },
+            {
+                fileLocation: "/slideshow/6.png",
+                default: "Slide 6"
+            },
+        ]
+    }
+
+    return {getNavigationLinks, getInformationPageData, getSlideshowFiles}
 }
 
 export default Proxy
