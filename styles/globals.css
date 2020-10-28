@@ -19,7 +19,6 @@ a {
   width: 750px;
   height: 400px;
   overflow-y: hidden;
-  /*overflow-x: hidden;*/
 }
 
 .viewport {
@@ -29,4 +28,28 @@ a {
 .slide {
   position: absolute;
   transition: translate 2s;
+}
+
+header {
+  display: grid;
+  grid-template: "logo links";
+  height: 80px;
+  padding: 0px 50px;
+  align-items: center;
+}
+
+header img {
+  grid-area: logo;
+}
+
+nav {
+  grid-area: links;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+nav {
+
 }
