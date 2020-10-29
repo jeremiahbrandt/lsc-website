@@ -1,5 +1,6 @@
 :root {
     --main-color: black;
+    --main-bg: unset;
     --contact-form-border: brown;
     --contact-form-bg: #caf0e7;
     --contact-form-color: inherit;
@@ -9,31 +10,69 @@
     --alert-signup-color: inherit;
     --copyright-bg: #b15124;
     --copyright-color: inherit;
+    --events-bg: #d0d0d0;
+    --event-bg: #d9f4f8;
+    --event-cl: #470d0d;
+    --event-title-cl: #111111;
+    --event-p-cl: #282828;
+    --event-section-cl: #232323;
   }
+
+.events {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 40px;
+    background-color: var(--events-bg);
+    justify-items: center;
+}
 
 main {
     margin: 0px auto;
     color: var(--main-color);
     max-width: 900px;
+    background-color: var(--main-bg);
 }
 
 .events-page-title {
     text-align: center;
+    background-color: var(--events-bg);
+    margin: 0px;
+    padding: 20px 0px;
 }
 
-article {
+.event {
     text-align: center;
     display: grid;
+    border: 1px solid black;
+    background-color: var(--event-bg);
+    color: var(--event-cl);
+    border-radius: 10px;
+    max-width: 700px;
 }
 
-article section {
+.event-title {
+    color: var(--event-title-cl);
+}
+
+.event section {
     display: grid;
     text-align: left;
     margin: 0px auto;
+    color: var(--event-section-cl);
 }
 
-article p {
+.event img {
+    max-width: 750px;
+    max-height: 300px;
+    margin: 0px auto;
+    padding-bottom: 20px;
+}
+
+.event p {
     text-align: left;
+    color: var(--event-p-cl);
+    padding: 20px;
+    margin: 0px;
 }
 
 .contact-form {
@@ -147,10 +186,6 @@ footer {
 .copyright {
     background-color: var(--copyright-bg);
     color: var(--copyright-color);
-}
-
-.event {
-    display: grid;
 }
 
 .slideshow {
