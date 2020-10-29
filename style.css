@@ -1,4 +1,9 @@
 :root {
+    --header-bg: #e3e2e2;
+    --nav-bg: #inherit;
+    --nav-cl: #3d3d3d;
+    --nav-a-bg-hover: #cbc1c1;
+    --nav-a-cl-hover: #555454;
     --main-color: black;
     --main-bg: unset;
     --contact-form-border: brown;
@@ -7,7 +12,6 @@
     --footer-bg: #311e1e;
     --footer-color: #bbbaba;
     --footer-bg-color: inherit;
-    /*--alert-signup-bg: #443434;*/
     --alert-signup-bg: inherit;
     --alert-signup-color: inherit;
     --copyright-bg: #1d0e0e;
@@ -219,7 +223,7 @@ footer {
 }
 
 .header-wrapper {
-    background-color: #0070f3;
+    background-color: var(--header-bg);
 }
 
 header {
@@ -239,6 +243,24 @@ nav {
     grid-area: links;
     display: grid;
     justify-items: center;
-    align-content: center;
     grid-template-columns: repeat(4, 1fr);
+    background-color: var(--nav-bg);
+    height: 100%;
+    align-items: center;
+    grid-template-rows: 100%;
+}
+
+nav a {
+    color: var(--nav-cl);
+    text-decoration: none;
+    font-size: 20px;
+    height: 100%;
+    display: grid;
+    align-items: center;
+    padding: 0 15px;
+}
+
+nav a:hover {
+    background-color: var(--nav-a-bg-hover);
+    color: var(--nav-a-cl-hover);
 }
