@@ -1,5 +1,4 @@
 import Layout from "../components/Layout"
-import styles from "./ContactPage.module.css"
 
 const ContactPage = () => {
     return (

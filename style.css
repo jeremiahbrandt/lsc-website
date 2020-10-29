@@ -268,3 +268,13 @@ nav a:hover {
     background-color: var(--nav-a-bg-hover);
     color: var(--nav-a-cl-hover);
 }
+
+.bio {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    align-items: center;
+}
+
+.bio-image {
+    max-width: 400px;
+}

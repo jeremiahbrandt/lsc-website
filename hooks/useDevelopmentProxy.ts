@@ -3,6 +3,7 @@ import INavigationData from '../interfaces/INavigationData';
 import ProxyInterface from "../interfaces/IProxy"
 import {IImage} from "../interfaces/IImage";
 import {IEventData} from "../interfaces/IEventData";
+import {IBioData} from "../interfaces/IBioData";
 
 const Proxy = (): ProxyInterface => {
     const PORT="3000"
@@ -35,7 +36,46 @@ const Proxy = (): ProxyInterface => {
         const email = "johndoe@example.com"
         const hoursOfOperation = ""
 
-        return {phoneNumber, email, hoursOfOperation}
+        const lscBio: IBioData = {
+            bio:
+                [
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur consectetur mattis tortor sit amet posuere. Quisque vulputate nisl eu nisi convallis pharetra. Nam sagittis orci eu velit euismod, ut rhoncus lorem faucibus. Quisque sit amet urna lectus. Integer tempus pharetra purus, ac pellentesque odio blandit consequat. Aenean nec ante ante. Vestibulum eget lectus in nisi tincidunt sagittis id nec tellus. Duis vulputate augue metus, nec dictum diam tempor sed. Nam vehicula ut turpis in pellentesque. Quisque sollicitudin mauris ut consequat mattis.",
+                    "Maecenas imperdiet eros in purus mollis, vitae pretium lorem pretium. Cras non venenatis odio. Sed lobortis enim in malesuada ultricies. Praesent non turpis vitae felis interdum cursus. Vivamus elementum turpis non sem elementum aliquam. Ut imperdiet mi mauris, in egestas massa laoreet ut. Donec at facilisis tellus, blandit ullamcorper lacus. Integer diam est, elementum sed gravida rhoncus, convallis sit amet sem. Etiam dapibus faucibus pretium. Quisque at tempus arcu, eu venenatis lacus. Etiam posuere cursus sapien vel tempus. Nullam auctor leo justo, in porttitor ipsum laoreet eget. Phasellus non sapien non dolor consequat tincidunt sed in ligula. Donec eu commodo nisl. Cras orci libero, porta at lorem sed, auctor accumsan libero. Nulla sed venenatis elit, quis malesuada est.",
+                    "Aenean lacinia augue vulputate egestas volutpat. Cras vitae viverra dolor. Sed vel augue a neque vestibulum efficitur posuere et nisi. Nulla et posuere ipsum, finibus mollis libero. Nunc massa velit, dapibus eu neque sit amet, pulvinar interdum ligula. Proin condimentum mi non sapien laoreet gravida. Aliquam scelerisque vitae nisl vitae imperdiet. Sed et dui nec odio pretium lobortis nec eget neque. Nulla facilisi. Nam elementum dictum neque nec volutpat. Donec a ornare leo.",
+                    "Fusce pulvinar egestas urna. Nunc vehicula, massa sit amet iaculis pharetra, metus est mattis urna, at cursus diam est eu libero. Sed vel risus arcu. Praesent non turpis sit amet sem faucibus dapibus vel vel ipsum. Vivamus porta nunc ac mollis vestibulum. Vivamus lacus nisi, interdum eu pulvinar in, efficitur non diam. Duis volutpat ullamcorper enim quis vestibulum. Quisque dignissim tortor et leo bibendum mattis. Maecenas lacinia, massa vitae accumsan mollis, mi purus mattis mi, et ultricies odio lectus eget ligula. Quisque sagittis lectus ac felis gravida, id feugiat nulla porttitor. Aliquam tristique lectus non massa consectetur, tincidunt aliquam nunc varius. Nunc vel felis euismod, faucibus leo vel, auctor lectus. Etiam felis eros, fringilla a tellus aliquet, efficitur fringilla ex. Duis vestibulum orci arcu. Praesent congue elit vel dictum aliquam.",
+                ],
+            image: {
+                src: "/about/about-lsc.jpg",
+                alt: "The Lutheran Student Center building in Warrensburg, Missouri."
+            }
+        }
+
+        const presidentBio: IBioData = {
+            bio:
+                [
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae risus id felis lacinia tristique condimentum a erat. Aenean sed enim non eros facilisis lacinia. Duis nec lorem in felis mattis maximus in eget velit. Morbi sed nisl eget mi mollis molestie. Quisque sed sem quis metus imperdiet dignissim. Nullam commodo ut felis quis egestas. Morbi commodo sem ex, in tincidunt mi blandit vitae. Pellentesque laoreet fermentum augue id malesuada. Cras erat est, efficitur et gravida ac, aliquet vel diam. Maecenas vitae enim posuere, pulvinar augue a, venenatis nisl. Morbi ornare vel erat eget imperdiet. Donec in fringilla leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+                    "Etiam a feugiat orci, tempor gravida odio. Proin ut pellentesque ipsum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla facilisi. Quisque nec dignissim libero. Donec mi nisi, varius quis rutrum vel, ultrices vehicula nibh. Nam sit amet interdum eros. Morbi non risus semper, elementum eros eget, consectetur eros. Ut eget metus dolor. In auctor, massa vel commodo finibus, quam mauris tincidunt dui, id venenatis nisl felis eget felis. Pellentesque molestie sodales aliquam. Donec porta dolor non lorem bibendum suscipit nec sed nisl. Duis erat dui, condimentum eu tristique eu, scelerisque mollis augue.",
+                ],
+            image: {
+                src: "/about/about-president.jpg",
+                alt: "The President of the Lutheran Student Center."
+            }
+        }
+
+        const pastorBio: IBioData = {
+            bio:
+                [
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lacinia, justo quis ultricies blandit, arcu magna fermentum urna, nec molestie felis ante vitae justo. Integer at lectus massa. Ut purus felis, commodo non augue sed, posuere dapibus ante. Duis tincidunt egestas diam, at viverra mi tincidunt consectetur. Suspendisse eu nisl et erat commodo imperdiet at eu orci. Donec iaculis mollis interdum. Praesent imperdiet magna a tincidunt pharetra. Praesent efficitur justo eget lacinia elementum. Sed auctor mauris ut nunc fringilla mattis. Duis eget efficitur enim. Duis at rutrum mi, at pellentesque arcu. Sed lorem quam, mattis nec accumsan quis, imperdiet vitae libero.",
+                    "In hac habitasse platea dictumst. Donec ornare sapien imperdiet pellentesque molestie. Donec non pellentesque est, id egestas ante. Phasellus ut elit nec magna vestibulum posuere id id mauris. Duis faucibus tristique enim, id pharetra ex. Donec nunc arcu, suscipit eget dolor vitae, ultrices maximus nulla. Etiam et urna justo. Suspendisse sit amet tellus et mi lobortis condimentum ac sit amet lacus.",
+                    "Cras a augue at nulla lacinia ultrices. Nunc rhoncus dignissim velit, nec vehicula eros dictum at. Ut sollicitudin tortor ut interdum porttitor. Donec vel varius metus. Duis id orci non diam sollicitudin interdum ac quis est. Cras fringilla vitae diam vel malesuada. Donec tempus, turpis quis rutrum ultricies, mauris ex aliquam metus, vel tincidunt enim ipsum ut urna. Donec sagittis dolor dui. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque lacinia lobortis nisi, vitae iaculis tellus volutpat nec. Aliquam vel pharetra neque. Duis tincidunt nisi eu orci tristique sodales."
+                ],
+            image: {
+                src: "/about/about-pastor.jpg",
+                alt: "The Pastor of the Lutheran Student Center."
+            }
+        }
+
+        return {phoneNumber, email, hoursOfOperation, lscBio, pastorBio, presidentBio}
     }
 
     const getSlideshowFiles = (): IImage[] => {
