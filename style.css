@@ -4,11 +4,13 @@
     --contact-form-border: brown;
     --contact-form-bg: #caf0e7;
     --contact-form-color: inherit;
-    --footer-bg: #eb1919;
+    --footer-bg: #311e1e;
+    --footer-color: #bbbaba;
     --footer-bg-color: inherit;
-    --alert-signup-bg: #3a271e;
+    /*--alert-signup-bg: #443434;*/
+    --alert-signup-bg: inherit;
     --alert-signup-color: inherit;
-    --copyright-bg: #b15124;
+    --copyright-bg: #1d0e0e;
     --copyright-color: inherit;
     --events-bg: #d0d0d0;
     --event-bg: #d9f4f8;
@@ -146,8 +148,13 @@ main {
 
 footer {
     background-color: var(--footer-bg);
+    color: var(--footer-color);
     display: grid;
+    grid-template-rows: auto 50px;
     justify-content: center;
+    width: 100%;
+    justify-items: center;
+    grid-template-columns: 1fr;
 }
 
 .alert-signup h1 {
@@ -157,6 +164,9 @@ footer {
 
 .alert-signup {
     background-color: var(--alert-signup-bg);
+    display: grid;
+    padding: 10px 20px;
+    max-width: 500px;
 }
 
 .alert-signup form {
@@ -164,7 +174,8 @@ footer {
     grid-template: 
         "selection input"35px
         "submit submit"30px
-        / 2fr 11fr; 
+        / 2fr 11fr;
+    grid-row-gap: 10px;
 }
 
 .alert-signup select {
@@ -177,15 +188,19 @@ footer {
 
 .alert-signup input[type="submit"] {
     grid-area: submit;
-    border-radius: 15px;
+    border-radius: 10px;
     width: 100%;
     max-width: 140px;
     justify-self: center;
 }
 
 .copyright {
+    text-align: center;
     background-color: var(--copyright-bg);
     color: var(--copyright-color);
+    display: grid;
+    align-items: center;
+    width: 100%;
 }
 
 .slideshow {
