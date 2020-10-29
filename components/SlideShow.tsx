@@ -8,7 +8,7 @@ const Slideshow = () => {
         <div className={"slideshow"}>
             <div className={"viewport"}>
                 {
-                    data.map((item, index) => <img className={"slide"} src={item.fileLocation} alt={item.default} />)
+                    data.map((item, index) => <img className={"slide"} src={item.src} alt={item.alt} />)
                 }
             </div>
         </div>
