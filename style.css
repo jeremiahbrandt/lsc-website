@@ -2,7 +2,7 @@
     --header-bg: #e3e2e2;
     --nav-bg: #inherit;
     --nav-cl: #3d3d3d;
-    --nav-a-bg-hover: #cbc1c1;
+    --nav-a-bg-hover: #c7c7c7;
     --nav-a-cl-hover: #555454;
     --main-color: black;
     --main-bg: unset;
@@ -23,6 +23,10 @@
     --event-p-cl: #282828;
     --event-section-cl: #232323;
   }
+
+body {
+    margin: 0;
+}
 
 .events {
     display: grid;
@@ -242,7 +246,6 @@ header img {
 nav {
     grid-area: links;
     display: grid;
-    justify-items: center;
     grid-template-columns: repeat(4, 1fr);
     background-color: var(--nav-bg);
     height: 100%;
@@ -258,6 +261,7 @@ nav a {
     display: grid;
     align-items: center;
     padding: 0 15px;
+    text-align: center;
 }
 
 nav a:hover {
