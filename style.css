@@ -187,6 +187,31 @@ footer {
     grid-template-columns: 1fr;
 }
 
+.footer-top {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.contact-information {
+    display: grid;
+    grid-template: "phone" "email" "address";
+    grid-template-rows: 20px 20px 60px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.contact-information .phone {
+    grid-area: phone;
+}
+.contact-information .email {
+    grid-area: email;
+}
+.contact-information .address {
+    grid-area: address;
+    display: grid;
+}
+
 .alert-signup h1 {
     font-size: 20px;   
     text-align: center;

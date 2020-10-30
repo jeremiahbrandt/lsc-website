@@ -5,6 +5,7 @@ import {IImage} from "../interfaces/IImage";
 import {IEventData} from "../interfaces/IEventData";
 import {IBioData} from "../interfaces/IBioData";
 import {IContactPageData} from "../interfaces/IContactPageData";
+import {IFooterProps} from "../interfaces/IFooterProps";
 
 const Proxy = (): ProxyInterface => {
     const getNavigationLinks = () => {
@@ -65,6 +66,20 @@ const Proxy = (): ProxyInterface => {
         ]
 
         return {phoneNumber, email, hoursOfOperation}
+    }
+
+    const getFooterProps = (): IFooterProps => {
+        return {
+            address: {
+                addressNumber: 215,
+                street: "S Holden St",
+                city: "Warrensburg",
+                state: "MO",
+                zip: 64093
+            },
+            email: "faithknobnoster@gmail.com",
+            phone: "(660) 747-7063"
+        }
     }
 
     const getInformationPageData = (): IInformationPageData => {
@@ -318,7 +333,7 @@ const Proxy = (): ProxyInterface => {
         ]
     }
 
-    return {getNavigationLinks, getInformationPageData, getSlideshowFiles, getContactPageData, getEventData}
+    return {getNavigationLinks, getInformationPageData, getSlideshowFiles, getContactPageData, getEventData, getFooterProps}
 }
 
 export default Proxy
