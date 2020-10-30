@@ -35,7 +35,7 @@ const Footer = () => {
                     </form>
                 </div>
             </div>
-            <div className="copyright">&copy; {new Date().getFullYear()} Lutheran Student Center</div>
+            <div className="copyright">Copyright &copy; {new Date().getFullYear()} Lutheran Student Center</div>
         </footer>
     )
 }

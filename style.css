@@ -258,19 +258,8 @@ footer {
     width: 100%;
 }
 
-.slideshow {
-    width: 750px;
-    height: 400px;
-    overflow-y: hidden;
-}
-
 .viewport {
     width: 3750px;
-}
-
-.slide {
-    position: absolute;
-    transition: translate 2s;
 }
 
 .header-wrapper {

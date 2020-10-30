@@ -3,6 +3,7 @@ import ContactForm from "../components/ContactForm";
 import Proxy from "../hooks/useProxy";
 import {IContactPageData} from "../interfaces/IContactPageData";
 import DayOfOperation from "../components/DayOfOperation";
+import Head from "next/head";
 
 export async function getStaticProps() {
     return {
@@ -13,13 +14,14 @@ export async function getStaticProps() {
 const ContactPage:React.FunctionComponent<IContactPageData> = (props) => {
     return (
         <Layout>
+            <Head>
+                <title>LSC - Contact</title>
+            </Head>
             <ContactForm />
             <div className={"hours-of-operation"}>
                 <h1 className={"hours-of-operation-title"}>Hours</h1>
                 {props.hoursOfOperation.map((item, index) => <DayOfOperation key={`dayOfOperation${index}`}{...item} />)}
             </div>
-            <span className="phone">Phone Number: {props.phoneNumber}</span>
-            <span className="email">Phone Number: {props.email}</span>
         </Layout>
     )
 }

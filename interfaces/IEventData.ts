@@ -6,6 +6,6 @@ export interface IEventData {
     startTime: number,
     endTime: number,
     location: string,
-    description: string,
+    description: string[],
     image: IImage;
 }

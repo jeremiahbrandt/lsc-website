@@ -1,11 +1,15 @@
 import Layout from "../components/Layout";
 import Proxy from "../hooks/useDevelopmentProxy";
+import Head from "next/head";
 
 const eventsPage = () => {
     const events = Proxy().getEventData()
 
     return (
         <Layout>
+            <Head>
+                <title>LSC - Events</title>
+            </Head>
             <h1 className={"events-page-title"}>Upcoming Events</h1>
             <div className={"events"}>
                 {
@@ -18,7 +22,9 @@ const eventsPage = () => {
                                    <span><b>When:</b> {event.date}, {event.startTime} - {event.endTime}</span>
                                    <span><b>Location:</b> {event.location}</span>
                                </section>
-                               <p>{event.description}</p>
+                               {
+                                   event.description.map((desc, index) => <p key={`description${index}`}>{desc}</p>)
+                               }
                            </article>
                        )
                     })
