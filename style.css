@@ -194,11 +194,27 @@ footer {
 
 .contact-information {
     display: grid;
-    grid-template: "phone" "email" "address";
-    grid-template-rows: 20px 20px 60px;
+    grid-template: "phone-email" "address";
+    grid-template-rows: auto auto;
     justify-content: center;
     align-content: center;
     align-items: center;
+    grid-row-gap: 20px;
+}
+
+.contact-item {
+    display: grid;
+    grid-template-columns: 40px auto;
+    align-items: center;
+}
+
+.contact-item .street-address {
+    display: grid;
+}
+
+.contact-information .phone-email {
+    display: grid;
+    grid-row-gap: 5px;
 }
 
 .contact-information .phone {
