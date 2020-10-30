@@ -4,6 +4,7 @@ import ProxyInterface from "../interfaces/IProxy"
 import {IImage} from "../interfaces/IImage";
 import {IEventData} from "../interfaces/IEventData";
 import {IBioData} from "../interfaces/IBioData";
+import {IContactPageData} from "../interfaces/IContactPageData";
 
 const Proxy = (): ProxyInterface => {
     const PORT="3000"
@@ -31,12 +32,18 @@ const Proxy = (): ProxyInterface => {
         return dummyData
     }
 
-    const getInformationPageData = (): IInformationPageData => {
+    const getContactPageData: IContactPageData = () => {
         const phoneNumber = "(123) 456-7890"
         const email = "johndoe@example.com"
         const hoursOfOperation = ""
 
+        return {phoneNumber, email, hoursOfOperation}
+    }
+
+    const getInformationPageData = (): IInformationPageData => {
         const lscBio: IBioData = {
+            name: "Lutheran Student Center",
+            title: "UCM Student Organization",
             bio:
                 [
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur consectetur mattis tortor sit amet posuere. Quisque vulputate nisl eu nisi convallis pharetra. Nam sagittis orci eu velit euismod, ut rhoncus lorem faucibus. Quisque sit amet urna lectus. Integer tempus pharetra purus, ac pellentesque odio blandit consequat. Aenean nec ante ante. Vestibulum eget lectus in nisi tincidunt sagittis id nec tellus. Duis vulputate augue metus, nec dictum diam tempor sed. Nam vehicula ut turpis in pellentesque. Quisque sollicitudin mauris ut consequat mattis.",
@@ -51,6 +58,8 @@ const Proxy = (): ProxyInterface => {
         }
 
         const presidentBio: IBioData = {
+            name: "Sarah Heckman",
+            title: "President",
             bio:
                 [
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae risus id felis lacinia tristique condimentum a erat. Aenean sed enim non eros facilisis lacinia. Duis nec lorem in felis mattis maximus in eget velit. Morbi sed nisl eget mi mollis molestie. Quisque sed sem quis metus imperdiet dignissim. Nullam commodo ut felis quis egestas. Morbi commodo sem ex, in tincidunt mi blandit vitae. Pellentesque laoreet fermentum augue id malesuada. Cras erat est, efficitur et gravida ac, aliquet vel diam. Maecenas vitae enim posuere, pulvinar augue a, venenatis nisl. Morbi ornare vel erat eget imperdiet. Donec in fringilla leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
@@ -63,6 +72,8 @@ const Proxy = (): ProxyInterface => {
         }
 
         const pastorBio: IBioData = {
+            name: "Jon-Michael Schwigert",
+            title: "Pastor",
             bio:
                 [
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lacinia, justo quis ultricies blandit, arcu magna fermentum urna, nec molestie felis ante vitae justo. Integer at lectus massa. Ut purus felis, commodo non augue sed, posuere dapibus ante. Duis tincidunt egestas diam, at viverra mi tincidunt consectetur. Suspendisse eu nisl et erat commodo imperdiet at eu orci. Donec iaculis mollis interdum. Praesent imperdiet magna a tincidunt pharetra. Praesent efficitur justo eget lacinia elementum. Sed auctor mauris ut nunc fringilla mattis. Duis eget efficitur enim. Duis at rutrum mi, at pellentesque arcu. Sed lorem quam, mattis nec accumsan quis, imperdiet vitae libero.",
@@ -280,7 +291,7 @@ const Proxy = (): ProxyInterface => {
         ]
     }
 
-    return {getNavigationLinks, getInformationPageData, getSlideshowFiles, getEventData}
+    return {getNavigationLinks, getInformationPageData, getSlideshowFiles, getContactPageData, getEventData}
 }
 
 export default Proxy

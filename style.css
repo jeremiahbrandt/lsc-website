@@ -269,12 +269,33 @@ nav a:hover {
     color: var(--nav-a-cl-hover);
 }
 
+.bio:nth-of-type(odd) {
+    grid-template: "bioHeader bioHeader" "p img";
+    grid-template-columns: 4fr 1fr;
+}
+.bio:nth-of-type(even) {
+    grid-template: "bioHeader bioHeader" "img p";
+    grid-template-columns: 1fr 4fr;
+}
+
 .bio {
     display: grid;
     grid-template-columns: 3fr 1fr;
     align-items: center;
+    grid-column-gap: 20px;
+}
+
+.bio-header {
+    text-align: center;
+    grid-area: bioHeader;
+}
+
+.bio-paragraphs {
+    grid-area: p;
 }
 
 .bio-image {
+    grid-area: img;
     max-width: 400px;
+    border-radius: 50px;
 }
