@@ -1,20 +1,25 @@
 import Layout from "../components/Layout"
+import ContactForm from "../components/ContactForm";
+import Proxy from "../hooks/useProxy";
+import {IContactPageData} from "../interfaces/IContactPageData";
+import DayOfOperation from "../components/DayOfOperation";
 
-const ContactPage = () => {
+export async function getStaticProps() {
+    return {
+        props: Proxy.getContactPageData()
+    }
+}
+
+const ContactPage:React.FunctionComponent<IContactPageData> = (props) => {
     return (
         <Layout>
-            <form className="contact-form" action="">
-                <h1>Send a Message</h1>
-                <label id="name-label" htmlFor="name">Name:</label>
-                <input id="text-input" type="text" name="name" required/>
-                <label id="phone-label" htmlFor="phone">Phone Number:</label>
-                <input id="text-input" type="tel" name="phone" />
-                <label id="email-label" htmlFor="email">Email Address:</label>
-                <input id="text-input" type="email" name="email" />
-                <label id="message-label" htmlFor="message">Message:</label>
-                <textarea id="message-input" name="message" />
-                <input type="submit" value="Send" />
-            </form>
+            <ContactForm />
+            <div className={"hours-of-operation"}>
+                <h1 className={"hours-of-operation-title"}>Hours</h1>
+                {props.hoursOfOperation.map((item, index) => <DayOfOperation key={`dayOfOperation${index}`}{...item} />)}
+            </div>
+            <span className="phone">Phone Number: {props.phoneNumber}</span>
+            <span className="email">Phone Number: {props.email}</span>
         </Layout>
     )
 }

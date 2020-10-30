@@ -7,7 +7,7 @@
     --main-color: black;
     --main-bg: unset;
     --contact-form-border: brown;
-    --contact-form-bg: #caf0e7;
+    --contact-form-bg: inherit;
     --contact-form-color: inherit;
     --footer-bg: #311e1e;
     --footer-color: #bbbaba;
@@ -37,7 +37,7 @@ body {
 }
 
 main {
-    margin: 0px auto;
+    margin: 0 auto;
     color: var(--main-color);
     max-width: 900px;
     background-color: var(--main-bg);
@@ -46,8 +46,8 @@ main {
 .events-page-title {
     text-align: center;
     background-color: var(--events-bg);
-    margin: 0px;
-    padding: 20px 0px;
+    margin: 0;
+    padding: 20px 0;
 }
 
 .event {
@@ -67,14 +67,14 @@ main {
 .event section {
     display: grid;
     text-align: left;
-    margin: 0px auto;
+    margin: 0 auto;
     color: var(--event-section-cl);
 }
 
 .event img {
     max-width: 750px;
     max-height: 300px;
-    margin: 0px auto;
+    margin: 0 auto;
     padding-bottom: 20px;
 }
 
@@ -82,30 +82,58 @@ main {
     text-align: left;
     color: var(--event-p-cl);
     padding: 20px;
-    margin: 0px;
+    margin: 0;
+}
+
+.hours-of-operation {
+    display: grid;
+    grid-row-gap: 10px;
+}
+
+.hours-of-operation-title {
+    text-align: center;
+    font-size: 25px;
+    height: 15px;
+}
+
+.day-of-operation {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 20px;
+}
+
+.text-right {
+    text-align: right;
+}
+.text-left {
+    text-align: left;
 }
 
 .contact-form {
     color: var(--contact-form-color);
     border-radius: 10px;
-    border: 1px solid var(--contact-form-border);
+    /*border: 1px solid var(--contact-form-border);*/
     background-color: var(--contact-form-bg);
     max-width: 750px;
     width: 100%;
     display: grid;
     grid-template: 
-        "title title" 70px 
-        "nameLabel nameInput" 50px
-        "phoneLabel phoneInput" 50px
-        "emailLabel emailInput" 50px
-        "messageLabel messageInput" 50px
-        "submitButton submitButton" 40px
+        "title title" 50px
+        "nameLabel nameInput" 35px
+        "phoneLabel phoneInput" 35px
+        "emailLabel emailInput" 35px
+        "messageLabel messageInput" 70px
+        "submitButton submitButton" 30px
         /3fr 5fr;
-    grid-auto-rows: 50px;
     grid-row-gap: 10px;
     text-align: right;
     padding: 10px 20px 10px 20px;
 }
+
+.contact-form-title {
+    grid-area: title;
+    text-align: center;
+    font-size: 25px;}
 
 .contact-form input, .contact-form textarea {
     border: 1px solid black;
@@ -121,13 +149,7 @@ main {
 .contact-form input[type="submit"] {
     grid-area: submitButton;
     width: 200px;
-    justify-self: center;
-}
-
-.contact-form h1 {
-    grid-area: title;
-    text-align: center;
-    font-size: 30px;
+    justify-self: right
 }
 .contact-form #name-label {
     grid-area: nameLabel;
@@ -234,7 +256,7 @@ header {
     display: grid;
     grid-template: "logo links";
     height: 80px;
-    padding: 0px 50px;
+    padding: 0 50px;
     align-items: center;
 }
 

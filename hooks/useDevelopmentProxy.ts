@@ -7,8 +7,6 @@ import {IBioData} from "../interfaces/IBioData";
 import {IContactPageData} from "../interfaces/IContactPageData";
 
 const Proxy = (): ProxyInterface => {
-    const PORT="3000"
-    const HOME_URL=`localhost:${PORT}`
     const getNavigationLinks = () => {
         const dummyData: INavigationData = [
             {
@@ -32,10 +30,39 @@ const Proxy = (): ProxyInterface => {
         return dummyData
     }
 
-    const getContactPageData: IContactPageData = () => {
+    const getContactPageData = (): IContactPageData => {
         const phoneNumber = "(123) 456-7890"
         const email = "johndoe@example.com"
-        const hoursOfOperation = ""
+        const hoursOfOperation = [
+            {
+                day: "Sunday",
+                hours: "Closed"
+            },
+            {
+                day: "Monday",
+                hours: "10am - 4pm"
+            },
+            {
+                day: "Tuesday",
+                hours: "12pm - 6pm"
+            },
+            {
+                day: "Wednesday",
+                hours: "10am - 4pm"
+            },
+            {
+                day: "Thursday",
+                hours: "11am - 7pm"
+            },
+            {
+                day: "Friday",
+                hours: "10am - 3pm"
+            },
+            {
+                day: "Saturday",
+                hours: "Closed"
+            },
+        ]
 
         return {phoneNumber, email, hoursOfOperation}
     }
@@ -86,7 +113,7 @@ const Proxy = (): ProxyInterface => {
             }
         }
 
-        return {phoneNumber, email, hoursOfOperation, lscBio, pastorBio, presidentBio}
+        return {lscBio, pastorBio, presidentBio}
     }
 
     const getSlideshowFiles = (): IImage[] => {
