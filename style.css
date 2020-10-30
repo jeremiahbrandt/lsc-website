@@ -202,20 +202,25 @@ footer {
     grid-row-gap: 20px;
 }
 
-.contact-item {
-    display: grid;
-    grid-template-columns: 40px auto;
-    align-items: center;
-}
-
 .contact-item .street-address {
     display: grid;
+}
+
+.contact-information a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .contact-information .phone-email {
     display: grid;
     grid-row-gap: 5px;
 }
+
+.contact-information .phone-email a {
+    display: grid;
+    display: grid;
+    grid-template-columns: 40px auto;
+    align-items: center;}
 
 .contact-information .phone {
     grid-area: phone;
@@ -263,6 +268,17 @@ footer {
     width: 100%;
     max-width: 140px;
     justify-self: center;
+}
+
+.social-media {
+    display: grid;
+    justify-content: right;
+    align-items: end;
+    padding-bottom: 20px;
+}
+
+.social-media svg {
+    height:30px;
 }
 
 .copyright {

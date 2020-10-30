@@ -76,7 +76,11 @@ const Proxy = (): ProxyInterface => {
                 zip: 64093
             },
             email: "faithknobnoster@gmail.com",
-            phone: "(660) 747-7063"
+            phone: "(660) 747-7063",
+            socialMedia:
+                {
+                    facebookURL: "https://www.facebook.com/UCMLutherans/",
+                }
         }
     }
 

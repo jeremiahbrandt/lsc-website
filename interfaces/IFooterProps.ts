@@ -1,3 +1,5 @@
+import {ISocialMedia} from "./ISocialMedia";
+
 export interface IFooterProps {
     email: string
     phone: string
@@ -8,4 +10,5 @@ export interface IFooterProps {
         state: string
         zip: number
     }
+    socialMedia: ISocialMedia
 }
