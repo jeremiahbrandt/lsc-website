@@ -187,51 +187,41 @@ footer {
     grid-template-columns: 1fr;
 }
 
+footer .contact-information {
+    display: grid;
+}
+
+footer #phoneEmail {
+    display: grid;
+    align-content: center;
+    grid-row-gap: 10px;
+}
+
+footer #phoneEmail a {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: left;
+    grid-column-gap: 10px;
+}
+
+#address {
+    display: grid;
+    grid-column-gap: 10px;
+    grid-template-columns: auto auto;
+    justify-content: left;
+}
+
+footer .footer-link {
+    color: inherit;
+    text-decoration: none;
+}
+
 .footer-top {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
 
-.contact-information {
-    display: grid;
-    grid-template: "phone-email" "address";
-    grid-template-rows: auto auto;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    grid-row-gap: 20px;
-}
 
-.contact-item .street-address {
-    display: grid;
-}
-
-.contact-information a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.contact-information .phone-email {
-    display: grid;
-    grid-row-gap: 5px;
-}
-
-.contact-information .phone-email a {
-    display: grid;
-    display: grid;
-    grid-template-columns: 40px auto;
-    align-items: center;}
-
-.contact-information .phone {
-    grid-area: phone;
-}
-.contact-information .email {
-    grid-area: email;
-}
-.contact-information .address {
-    grid-area: address;
-    display: grid;
-}
 
 .alert-signup h1 {
     font-size: 20px;   
