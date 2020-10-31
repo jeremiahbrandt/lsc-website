@@ -15,10 +15,6 @@ const Proxy = (): ProxyInterface => {
                 url: "/"
             },
             {
-                name: "Events",
-                url: "/events"
-            },
-            {
                 name: "About",
                 url: "/about"
             },

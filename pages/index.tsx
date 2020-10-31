@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Slideshow from "../components/SlideShow";
 import Layout from "../components/Layout";
 import 'react-slideshow-image/dist/styles.css'
+import Events from "../components/Events";
 
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
             <link rel="icon" href="/favicon.ico" />
         </Head>
             <Slideshow />
+            <Events />
         </Layout>
     )
 }
