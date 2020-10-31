@@ -27,7 +27,7 @@ const Footer = () => {
                     </span>
                     <span className={"contact-item"} id={"address"}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path> <circle cx="12" cy="10" r="3"></circle> </svg>
-                        <span className={"street-address"}>
+                        <span id={"street-address"}>
                             <span>{data.address.addressNumber} {data.address.street}</span>
                             <span>{data.address.city} {data.address.state}, {data.address.zip}</span>
                         </span>
@@ -47,7 +47,11 @@ const Footer = () => {
                 </div>
                 <div className={"social-media"}>
                     <a href={data.socialMedia.facebookURL}>
-                        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 333333 333333" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"><path d="M302077 0H31255C14069 0 1 14068 1 31256v270822c0 17186 14068 31254 31254 31254h270822c17186 0 31254-14068 31254-31254l2-270824C333333 14068 319265 0 302079 0h-2zM187907 95783h35461V53254h-35461c-27307 0-49588 22274-49588 49618v21255h-28355v42539h28350v113412h42533V166666h35427l7094-42539h-42523v-21255c0-3848 3247-7094 7060-7094v6h2z" fill="#3b5998"/></svg>
+                        <svg>
+                            <rect fill="#3B5998" width="36" height="36"/>
+                            <path fill="#FFFFFF" d="M30.895,16.535l-0.553,5.23h-4.181v15.176h-6.28V21.766H16.75v-5.23h3.131v-3.149
+	c0-4.254,1.768-6.796,6.796-6.796h4.181v5.23h-2.615c-1.952,0-2.081,0.736-2.081,2.1v2.615H30.895z"/>
+                        </svg>
                     </a>
                 </div>
             </div>

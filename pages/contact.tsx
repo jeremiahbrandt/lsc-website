@@ -17,10 +17,12 @@ const ContactPage:React.FunctionComponent<IContactPageData> = (props) => {
             <Head>
                 <title>LSC - Contact</title>
             </Head>
-            <ContactForm />
-            <div className={"hours-of-operation"}>
-                <h1 className={"hours-of-operation-title"}>Hours</h1>
-                {props.hoursOfOperation.map((item, index) => <DayOfOperation key={`dayOfOperation${index}`}{...item} />)}
+            <div className={"contact-page"}>
+                <ContactForm />
+                <div className={"hours-of-operation"}>
+                    <h1 className={"hours-of-operation-title"}>Hours</h1>
+                    {props.hoursOfOperation.map((item, index) => <DayOfOperation key={`dayOfOperation${index}`}{...item} />)}
+                </div>
             </div>
         </Layout>
     )

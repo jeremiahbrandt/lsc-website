@@ -1,29 +1,3 @@
-:root {
-    --header-bg: #e3e2e2;
-    --nav-bg: #inherit;
-    --nav-cl: #3d3d3d;
-    --nav-a-bg-hover: #c7c7c7;
-    --nav-a-cl-hover: #555454;
-    --main-color: black;
-    --main-bg: unset;
-    --contact-form-border: brown;
-    --contact-form-bg: inherit;
-    --contact-form-color: inherit;
-    --footer-bg: #311e1e;
-    --footer-color: #bbbaba;
-    --footer-bg-color: inherit;
-    --alert-signup-bg: inherit;
-    --alert-signup-color: inherit;
-    --copyright-bg: #1d0e0e;
-    --copyright-color: inherit;
-    --events-bg: #d0d0d0;
-    --event-bg: #d9f4f8;
-    --event-cl: #470d0d;
-    --event-title-cl: #111111;
-    --event-p-cl: #282828;
-    --event-section-cl: #232323;
-  }
-
 body {
     margin: 0;
 }
@@ -39,13 +13,18 @@ body {
 main {
     margin: 0 auto;
     color: var(--main-color);
+    width: 90%;
     max-width: 900px;
     background-color: var(--main-bg);
 }
 
+.main-wrapper {
+    background-color: var(--main-wrapper-bg);
+}
+
 .events-page-title {
     text-align: center;
-    background-color: var(--events-bg);
+    background-color: #d9f4f8;
     margin: 0;
     padding: 20px 0;
 }
@@ -57,7 +36,37 @@ main {
     background-color: var(--event-bg);
     color: var(--event-cl);
     border-radius: 10px;
-    max-width: 700px;
+    /*max-width: 700px;*/
+}
+
+:root {
+    font-family: 'Noto Sans JP', sans-serif;
+
+    --header-bg: #e3e2e2;
+    --nav-bg: #inherit;
+    --nav-cl: #3d3d3d;
+    --nav-a-bg-hover: #c7c7c7;
+    --nav-a-cl-hover: #555454;
+    --main-wrapper-bg: #e6f2fd;
+    --main-color: black;
+    --main-bg: inherit;
+    --contact-form-border: brown;
+    --contact-form-bg: inherit;
+    --contact-form-color: inherit;
+    --footer-bg: #311e1e;
+    --footer-color: #bbbaba;
+    --footer-bg-color: inherit;
+    --alert-signup-bg: inherit;
+    --alert-signup-color: inherit;
+    --copyright-bg: #1d0e0e;
+    --copyright-color: inherit;
+    --events-bg: inherit;
+    --event-bg: #d9f4f8;
+    --event-cl: #470d0d;
+    --event-title-cl: #111111;
+    --event-p-cl: #282828;
+    --event-section-cl: #232323;
+    --bios-bg: var(--event-bg);
 }
 
 .event-title {
@@ -107,6 +116,11 @@ main {
 }
 .text-left {
     text-align: left;
+}
+
+.contact-page {
+    background-color: var(--event-bg);
+    padding: 30px 0;
 }
 
 .contact-form {
@@ -209,6 +223,12 @@ footer #phoneEmail a {
     grid-column-gap: 10px;
     grid-template-columns: auto auto;
     justify-content: left;
+    align-items: center;
+}
+
+#street-address {
+    display: grid;
+    align-content: center;
 }
 
 footer .footer-link {
@@ -219,6 +239,7 @@ footer .footer-link {
 .footer-top {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    padding: 20px 0;
 }
 
 
@@ -268,7 +289,8 @@ footer .footer-link {
 }
 
 .social-media svg {
-    height:30px;
+    width: 36px;
+    height: 36px;
 }
 
 .copyright {
@@ -280,18 +302,21 @@ footer .footer-link {
     width: 100%;
 }
 
-.viewport {
-    width: 3750px;
+.header-wrapper {
+    height: 60px;
+    background-color: var(--header-bg);
+    align-content: center;
+    display: grid;
 }
 
-.header-wrapper {
-    background-color: var(--header-bg);
+.viewport {
+    width: 3750px;
 }
 
 header {
     display: grid;
     grid-template: "logo links";
-    height: 80px;
+    max-height: 80px;
     padding: 0 50px;
     align-items: center;
 }
@@ -299,6 +324,7 @@ header {
 header img {
     grid-area: logo;
     max-width: 1000px;
+    max-height: 40px;
 }
 
 nav {
@@ -306,7 +332,7 @@ nav {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     background-color: var(--nav-bg);
-    height: 100%;
+    height: 60px;
     align-items: center;
     grid-template-rows: 100%;
 }
@@ -327,18 +353,22 @@ nav a:hover {
     color: var(--nav-a-cl-hover);
 }
 
+.bios {
+    padding: 30px 30px;
+    background-color: var(--bios-bg);
+}
+
 .bio:nth-of-type(odd) {
     grid-template: "bioHeader bioHeader" "p img";
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 5fr 3fr;
 }
 .bio:nth-of-type(even) {
     grid-template: "bioHeader bioHeader" "img p";
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 3fr 5fr;
 }
 
 .bio {
     display: grid;
-    grid-template-columns: 3fr 1fr;
     align-items: center;
     grid-column-gap: 20px;
 }
@@ -354,6 +384,6 @@ nav a:hover {
 
 .bio-image {
     grid-area: img;
-    max-width: 400px;
+    width: 100%;
     border-radius: 50px;
 }
