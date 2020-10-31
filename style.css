@@ -3,19 +3,19 @@ body {
 }
 
 .events {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-row-gap: 40px;
     background-color: var(--events-bg);
+    display: grid;
+    grid-row-gap: 40px;
+    grid-template-columns: 1fr;
     justify-items: center;
 }
 
 main {
-    margin: 0 auto;
-    color: var(--main-color);
-    width: 90%;
-    max-width: 900px;
     background-color: var(--main-bg);
+    color: var(--main-color);
+    margin: 0 auto;
+    max-width: 900px;
+    width: 90%;
 }
 
 .main-wrapper {
@@ -23,50 +23,48 @@ main {
 }
 
 .events-page-title {
-    text-align: center;
     background-color: #d9f4f8;
     margin: 0;
     padding: 20px 0;
+    text-align: center;
 }
 
 .event {
-    text-align: center;
-    display: grid;
-    border: 1px solid black;
     background-color: var(--event-bg);
-    color: var(--event-cl);
     border-radius: 10px;
-    /*max-width: 700px;*/
+    border: 1px solid black;
+    color: var(--event-cl);
+    display: grid;
+    text-align: center;
 }
 
 :root {
-    font-family: 'Noto Sans JP', sans-serif;
-
-    --header-bg: #e3e2e2;
-    --nav-bg: #inherit;
-    --nav-cl: #3d3d3d;
-    --nav-a-bg-hover: #c7c7c7;
-    --nav-a-cl-hover: #555454;
-    --main-wrapper-bg: #e6f2fd;
-    --main-color: black;
-    --main-bg: inherit;
-    --contact-form-border: brown;
-    --contact-form-bg: inherit;
-    --contact-form-color: inherit;
-    --footer-bg: #311e1e;
-    --footer-color: #bbbaba;
-    --footer-bg-color: inherit;
     --alert-signup-bg: inherit;
     --alert-signup-color: inherit;
+    --bios-bg: var(--event-bg);
+    --contact-form-bg: inherit;
+    --contact-form-border: brown;
+    --contact-form-color: inherit;
     --copyright-bg: #1d0e0e;
     --copyright-color: inherit;
-    --events-bg: inherit;
     --event-bg: #d9f4f8;
     --event-cl: #470d0d;
-    --event-title-cl: #111111;
     --event-p-cl: #282828;
     --event-section-cl: #232323;
-    --bios-bg: var(--event-bg);
+    --event-title-cl: #111111;
+    --events-bg: inherit;
+    --footer-bg-color: inherit;
+    --footer-bg: #311e1e;
+    --footer-color: #bbbaba;
+    --header-bg: #e3e2e2;
+    --main-bg: inherit;
+    --main-color: black;
+    --main-wrapper-bg: #e6f2fd;
+    --nav-a-bg-hover: #c7c7c7;
+    --nav-a-cl-hover: #555454;
+    --nav-bg: #inherit;
+    --nav-cl: #3d3d3d;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 .event-title {
@@ -74,24 +72,24 @@ main {
 }
 
 .event section {
-    display: grid;
-    text-align: left;
-    margin: 0 auto;
     color: var(--event-section-cl);
+    display: grid;
+    margin: 0 auto;
+    text-align: left;
 }
 
 .event img {
-    max-width: 750px;
-    max-height: 300px;
     margin: 0 auto;
+    max-height: 300px;
+    max-width: 750px;
     padding-bottom: 20px;
 }
 
 .event p {
-    text-align: left;
     color: var(--event-p-cl);
-    padding: 20px;
     margin: 0;
+    padding: 20px;
+    text-align: left;
 }
 
 .hours-of-operation {
@@ -100,20 +98,21 @@ main {
 }
 
 .hours-of-operation-title {
-    text-align: center;
     font-size: 25px;
     height: 15px;
+    text-align: center;
 }
 
 .day-of-operation {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .text-right {
     text-align: right;
 }
+
 .text-left {
     text-align: left;
 }
@@ -124,68 +123,68 @@ main {
 }
 
 .contact-form {
-    color: var(--contact-form-color);
     border-radius: 10px;
-    /*border: 1px solid var(--contact-form-border);*/
-    background-color: var(--contact-form-bg);
-    max-width: 750px;
-    width: 100%;
+    color: var(--contact-form-color);
     display: grid;
-    grid-template: 
-        "title title" 50px
-        "nameLabel nameInput" 35px
-        "phoneLabel phoneInput" 35px
-        "emailLabel emailInput" 35px
-        "messageLabel messageInput" 70px
-        "submitButton submitButton" 30px
-        /3fr 5fr;
     grid-row-gap: 10px;
-    text-align: right;
+    grid-template:         "title title" 50px        "nameLabel nameInput" 35px        "phoneLabel phoneInput" 35px        "emailLabel emailInput" 35px        "messageLabel messageInput" 70px        "submitButton submitButton" 30px        /3fr 5fr;
+    max-width: 750px;
     padding: 10px 20px 10px 20px;
+    text-align: right;
+    width: 100%;
+    background-color: var(--contact-form-bg);
 }
 
 .contact-form-title {
+    font-size: 25px;
     grid-area: title;
     text-align: center;
-    font-size: 25px;}
+}
 
 .contact-form input, .contact-form textarea {
-    border: 1px solid black;
     border-radius: 10px;
+    border: 1px solid black;
 }
 
 .contact-form label {
-    display: grid;
     align-items: center;
+    display: grid;
     padding-right: 10px;
 }
 
 .contact-form input[type="submit"] {
     grid-area: submitButton;
     width: 200px;
-    justify-self: right
 }
+
 .contact-form #name-label {
     grid-area: nameLabel;
 }
+
 .contact-form #name-input {
     grid-area: nameInput;
 }
+
 .contact-form #phone-label {
     grid-area: phoneLabel;
 }
+
 .contact-form #phone-input {
     grid-area: phoneInput;
 }
+
 .contact-form #email-label {
     grid-area: emailLabel;
 }
+
 .contact-form #email-input {
     grid-area: emailInput;
 }
+
 .contact-form #message-label {
     grid-area: messageLabel;
 }
+
 .contact-form #message-input {
     grid-area: messageInput;
 }
@@ -194,11 +193,11 @@ footer {
     background-color: var(--footer-bg);
     color: var(--footer-color);
     display: grid;
+    grid-template-columns: 1fr;
     grid-template-rows: auto 50px;
     justify-content: center;
-    width: 100%;
     justify-items: center;
-    grid-template-columns: 1fr;
+    width: 100%;
 }
 
 footer .contact-information {
@@ -206,29 +205,29 @@ footer .contact-information {
 }
 
 footer #phoneEmail {
-    display: grid;
     align-content: center;
+    display: grid;
     grid-row-gap: 10px;
 }
 
 footer #phoneEmail a {
     display: grid;
+    grid-column-gap: 10px;
     grid-template-columns: auto auto;
     justify-content: left;
-    grid-column-gap: 10px;
 }
 
 #address {
+    align-items: center;
     display: grid;
     grid-column-gap: 10px;
     grid-template-columns: auto auto;
     justify-content: left;
-    align-items: center;
 }
 
 #street-address {
-    display: grid;
     align-content: center;
+    display: grid;
 }
 
 footer .footer-link {
@@ -242,27 +241,22 @@ footer .footer-link {
     padding: 20px 0;
 }
 
-
-
 .alert-signup h1 {
-    font-size: 20px;   
-    text-align: center;
+       text-align: center;
+    font-size: 20px;
 }
 
 .alert-signup {
     background-color: var(--alert-signup-bg);
     display: grid;
-    padding: 10px 20px;
     max-width: 500px;
+    padding: 10px 20px;
 }
 
 .alert-signup form {
     display: grid;
-    grid-template: 
-        "selection input"35px
-        "submit submit"30px
-        / 2fr 11fr;
     grid-row-gap: 10px;
+    grid-template:         "selection input"35px        "submit submit"30px        / 2fr 11fr;
 }
 
 .alert-signup select {
@@ -274,39 +268,39 @@ footer .footer-link {
 }
 
 .alert-signup input[type="submit"] {
-    grid-area: submit;
     border-radius: 10px;
-    width: 100%;
-    max-width: 140px;
+    grid-area: submit;
     justify-self: center;
+    max-width: 140px;
+    width: 100%;
 }
 
 .social-media {
+    align-items: end;
     display: grid;
     justify-content: right;
-    align-items: end;
     padding-bottom: 20px;
 }
 
 .social-media svg {
-    width: 36px;
     height: 36px;
+    width: 36px;
 }
 
 .copyright {
-    text-align: center;
+    align-items: center;
     background-color: var(--copyright-bg);
     color: var(--copyright-color);
     display: grid;
-    align-items: center;
+    text-align: center;
     width: 100%;
 }
 
 .header-wrapper {
-    height: 60px;
-    background-color: var(--header-bg);
     align-content: center;
+    background-color: var(--header-bg);
     display: grid;
+    height: 60px;
 }
 
 .viewport {
@@ -314,38 +308,38 @@ footer .footer-link {
 }
 
 header {
+    align-items: center;
     display: grid;
     grid-template: "logo links";
     max-height: 80px;
     padding: 0 50px;
-    align-items: center;
 }
 
 header img {
     grid-area: logo;
-    max-width: 1000px;
     max-height: 40px;
+    max-width: 1000px;
 }
 
 nav {
-    grid-area: links;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    background-color: var(--nav-bg);
-    height: 60px;
     align-items: center;
+    background-color: var(--nav-bg);
+    display: grid;
+    grid-area: links;
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 100%;
+    height: 60px;
 }
 
 nav a {
+    align-items: center;
     color: var(--nav-cl);
-    text-decoration: none;
+    display: grid;
     font-size: 20px;
     height: 100%;
-    display: grid;
-    align-items: center;
     padding: 0 15px;
     text-align: center;
+    text-decoration: none;
 }
 
 nav a:hover {
@@ -354,28 +348,29 @@ nav a:hover {
 }
 
 .bios {
-    padding: 30px 30px;
     background-color: var(--bios-bg);
+    padding: 30px 30px;
 }
 
 .bio:nth-of-type(odd) {
-    grid-template: "bioHeader bioHeader" "p img";
     grid-template-columns: 5fr 3fr;
+    grid-template: "bioHeader bioHeader" "p img";
 }
+
 .bio:nth-of-type(even) {
-    grid-template: "bioHeader bioHeader" "img p";
     grid-template-columns: 3fr 5fr;
+    grid-template: "bioHeader bioHeader" "img p";
 }
 
 .bio {
-    display: grid;
     align-items: center;
+    display: grid;
     grid-column-gap: 20px;
 }
 
 .bio-header {
-    text-align: center;
     grid-area: bioHeader;
+    text-align: center;
 }
 
 .bio-paragraphs {
@@ -383,7 +378,8 @@ nav a:hover {
 }
 
 .bio-image {
+    border-radius: 50px;
     grid-area: img;
     width: 100%;
-    border-radius: 50px;
 }
+
