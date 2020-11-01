@@ -1,8 +1,9 @@
 import {IImage} from "./IImage";
 
-export interface IBioData {
+export interface IBiography {
     name: string
-    title: string
+    position: string
     bio: string[]
     image: IImage
+    blockContent: object[]
 }

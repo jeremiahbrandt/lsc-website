@@ -1,10 +1,10 @@
 import React from "react";
-import {IBioData} from "../interfaces/IBioData";
+import {IBiography} from "../interfaces/iBiography";
 
-const Bio: React.FC<IBioData> = (props) => {
+const Bio: React.FC<IBiography> = (props) => {
     return (
         <article className={"bio"}>
-            <h1 className={"bio-header"}>{props.name} - {props.title}{}</h1>
+            <h1 className={"bio-header"}>{props.name} - {props.position}{}</h1>
             <span className={"bio-paragraphs"}>
                 {
                     props.bio.map((bio, index) => {

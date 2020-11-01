@@ -1,9 +1,9 @@
-import {IBioData} from "./IBioData";
+import {IBiography} from "./iBiography";
 
 interface IInformationPageData {
-    lscBio: IBioData
-    pastorBio: IBioData
-    presidentBio: IBioData
+    lscBio: IBiography
+    pastorBio: IBiography
+    presidentBio: IBiography
 }
 
 export default IInformationPageData
