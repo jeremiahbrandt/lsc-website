@@ -3,7 +3,6 @@ import Slideshow from "../components/SlideShow";
 import Layout from "../components/Layout";
 import 'react-slideshow-image/dist/styles.css'
 import Events from "../components/Events";
-import client from "../lib/client"
 import {getEvents, getSlideshowImageUrls} from "../lib/api";
 
 export async function getStaticProps() {
@@ -23,7 +22,7 @@ const IndexPage = (props) => {
             <link rel="icon" href="/favicon.ico" />
         </Head>
             <Slideshow imageUrls={props.slideshowImageUrls} />
-            <Events />
+            <Events events={props.events} />
         </Layout>
     )
 }

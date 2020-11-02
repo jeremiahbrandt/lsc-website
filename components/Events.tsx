@@ -1,28 +1,13 @@
 import React from "react"
-import Proxy from "../hooks/useProxy"
+import {IEvent} from "../interfaces/IEvent"
+import styles from "../css/Events.module.css"
+import Event from "./Event"
 
-const Events = () => {
-    const events = Proxy.getEventData()
-
+const Events: React.FC<{events: IEvent[]}> = ({events}: {events: IEvent[]}) => {
     return (
-        <div className={"events"}>
-            <h1 className={"events-title"}>Upcoming Events</h1>
+        <div className={styles.events}>
             {
-                events.map((event, index) => {
-                    return (
-                        <article key={`event${index}`} className={"event"}>
-                            <h2 className={"event-title"}>{event.name}</h2>
-                            <img src={event.coverImage.src} alt={event.coverImage.alt} />
-                            <section>
-                                <span><b>When:</b> {event.date}, {event.startTime} - {event.endTime}</span>
-                                <span><b>Location:</b> {event.location}</span>
-                            </section>
-                            {
-                                event.description.map((desc, index) => <p key={`description${index}`}>{desc}</p>)
-                            }
-                        </article>
-                    )
-                })
+                events.map((event, index) => <Event key={`event${index}`} {...event} />)
             }
         </div>
     )

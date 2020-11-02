@@ -1,0 +1,5 @@
+.events {
+    display: grid;
+    grid-row-gap: 20px;
+    justify-content: center;
+}

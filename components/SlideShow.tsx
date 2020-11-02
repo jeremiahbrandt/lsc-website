@@ -1,9 +1,8 @@
-import Proxy from "../hooks/useDevelopmentProxy";
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 import React from "react";
 
-const Slideshow: React.FC<{ imageUrls: object[] }> = ({imageUrls}: {imageUrls: object[]}) => {
+const Slideshow: React.FC<{ imageUrls: {imageUrl: string}[] }> = ({imageUrls}: {imageUrls: {imageUrl: string}[]}) => {
     return (
         <div>
             <Slide easing="ease">

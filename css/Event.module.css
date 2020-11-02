@@ -1,0 +1,30 @@
+.event {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    grid-row-gap: 10px;
+}
+
+.name {
+    font-size: 30px;
+}
+
+.image {
+
+}
+
+.timeLocation {
+
+}
+
+.time {
+
+}
+
+.location {
+
+}
+
+.blockContent {
+
+}
