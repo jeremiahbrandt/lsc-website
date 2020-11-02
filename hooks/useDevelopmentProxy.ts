@@ -2,8 +2,8 @@ import IInformationPageData from '../interfaces/IInformationPageData';
 import INavigationData from '../interfaces/INavigationData';
 import ProxyInterface from "../interfaces/IProxy"
 import {IImage} from "../interfaces/IImage";
-import {IEventData} from "../interfaces/IEventData";
-import {IBiography} from "../interfaces/iBiography";
+import {IEvent} from "../interfaces/IEvent";
+import {IBiography} from "../interfaces/IBiography";
 import {IContactPageData} from "../interfaces/IContactPageData";
 import {IFooterProps} from "../interfaces/IFooterProps";
 
@@ -150,7 +150,7 @@ const Proxy = (): ProxyInterface => {
         ]
     }
 
-    const getEventData = (): IEventData[] => {
+    const getEventData = (): IEvent[] => {
         return [
             {
                 name: "Dinner and Bible Study",
@@ -163,7 +163,7 @@ const Proxy = (): ProxyInterface => {
                          "Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas vestibulum ante a dolor sollicitudin, at tincidunt nulla eleifend. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In odio elit, rutrum vel mattis posuere, sollicitudin vel purus. Quisque in ornare arcu. Duis magna dui, pharetra at nisi at, interdum condimentum justo. Sed eu nulla tincidunt, rutrum arcu at, volutpat eros. Etiam porta erat magna, in sollicitudin sem placerat in. Duis vestibulum maximus sollicitudin. Nunc vestibulum magna dictum, ornare lorem in, commodo urna. Proin risus urna, congue sed auctor sed, commodo ut enim. Nunc venenatis tellus nec felis placerat hendrerit. Proin pulvinar est lectus, in mattis sapien tincidunt eget. Sed porttitor, ligula vitae commodo convallis, arcu sem tincidunt urna, nec dignissim nulla orci nec arcu.",
                     ],
                 date: "2020-10-29",
-                image: {
+                coverImage: {
                     src: "/events/event-meal.jpg",
                     alt: "People eating a meal."
                 }
@@ -179,7 +179,7 @@ const Proxy = (): ProxyInterface => {
                         "In sodales pulvinar leo ut sodales. Nam sed libero sed tellus blandit bibendum. Morbi vitae neque magna. Nam dictum magna commodo, varius justo scelerisque, elementum eros. Vestibulum pellentesque urna vulputate leo lacinia, vel lacinia metus scelerisque. Integer porttitor pretium rhoncus. Quisque nibh tellus, tempus ac volutpat sit amet, efficitur sit amet quam. Donec interdum nulla ac massa dapibus consectetur. Etiam cursus risus sed leo fermentum, at lobortis erat finibus. Praesent efficitur nulla at tellus ornare dignissim et non diam.",
                     ],
                 date: "2020-11-03",
-                image: {
+                coverImage: {
                     src: "/events/event-worship.jpg",
                     alt: "A chapel service."
                 }
@@ -194,7 +194,7 @@ const Proxy = (): ProxyInterface => {
                         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit eu ligula eu rutrum. Pellentesque scelerisque magna ut ipsum tempor, eget placerat est dapibus. Sed id dapibus neque, vitae ornare mi. Vestibulum ut dictum enim, at tristique ex. Praesent vestibulum turpis ut maximus luctus. Etiam venenatis ipsum sit amet velit consectetur, non sodales turpis sagittis. Quisque porta id nulla non ultrices. Mauris pretium eu ipsum ac consectetur. Morbi a dui eget leo commodo semper. Pellentesque quam neque, molestie eget finibus sit amet, cursus et urna. In malesuada ut tellus at porttitor. Maecenas faucibus felis massa, at semper lectus luctus ut. Fusce non luctus odio, at rutrum enim. Nulla sed aliquet tellus, id laoreet dolor. Ut nibh eros, faucibus sed fermentum vitae, vestibulum ut dolor. Fusce vel tempor ex.",
                     ],
                 date: "2020-11-04",
-                image: {
+                coverImage: {
                     src: "/events/event-service-project.jpg",
                     alt: "A service event."
                 }
@@ -210,7 +210,7 @@ const Proxy = (): ProxyInterface => {
                          "Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas vestibulum ante a dolor sollicitudin, at tincidunt nulla eleifend. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In odio elit, rutrum vel mattis posuere, sollicitudin vel purus. Quisque in ornare arcu. Duis magna dui, pharetra at nisi at, interdum condimentum justo. Sed eu nulla tincidunt, rutrum arcu at, volutpat eros. Etiam porta erat magna, in sollicitudin sem placerat in. Duis vestibulum maximus sollicitudin. Nunc vestibulum magna dictum, ornare lorem in, commodo urna. Proin risus urna, congue sed auctor sed, commodo ut enim. Nunc venenatis tellus nec felis placerat hendrerit. Proin pulvinar est lectus, in mattis sapien tincidunt eget. Sed porttitor, ligula vitae commodo convallis, arcu sem tincidunt urna, nec dignissim nulla orci nec arcu.",
                     ],
                 date: "2020-10-29",
-                image: {
+                coverImage: {
                     src: "/events/event-meal.jpg",
                     alt: "People eating a meal."
                 }
@@ -226,7 +226,7 @@ const Proxy = (): ProxyInterface => {
                         "In sodales pulvinar leo ut sodales. Nam sed libero sed tellus blandit bibendum. Morbi vitae neque magna. Nam dictum magna commodo, varius justo scelerisque, elementum eros. Vestibulum pellentesque urna vulputate leo lacinia, vel lacinia metus scelerisque. Integer porttitor pretium rhoncus. Quisque nibh tellus, tempus ac volutpat sit amet, efficitur sit amet quam. Donec interdum nulla ac massa dapibus consectetur. Etiam cursus risus sed leo fermentum, at lobortis erat finibus. Praesent efficitur nulla at tellus ornare dignissim et non diam.",
                     ],
                 date: "2020-11-03",
-                image: {
+                coverImage: {
                     src: "/events/event-worship.jpg",
                     alt: "A chapel service."
                 }
@@ -241,7 +241,7 @@ const Proxy = (): ProxyInterface => {
                         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit eu ligula eu rutrum. Pellentesque scelerisque magna ut ipsum tempor, eget placerat est dapibus. Sed id dapibus neque, vitae ornare mi. Vestibulum ut dictum enim, at tristique ex. Praesent vestibulum turpis ut maximus luctus. Etiam venenatis ipsum sit amet velit consectetur, non sodales turpis sagittis. Quisque porta id nulla non ultrices. Mauris pretium eu ipsum ac consectetur. Morbi a dui eget leo commodo semper. Pellentesque quam neque, molestie eget finibus sit amet, cursus et urna. In malesuada ut tellus at porttitor. Maecenas faucibus felis massa, at semper lectus luctus ut. Fusce non luctus odio, at rutrum enim. Nulla sed aliquet tellus, id laoreet dolor. Ut nibh eros, faucibus sed fermentum vitae, vestibulum ut dolor. Fusce vel tempor ex.",
                     ],
                 date: "2020-11-04",
-                image: {
+                coverImage: {
                     src: "/events/event-service-project.jpg",
                     alt: "A service event."
                 }
@@ -257,7 +257,7 @@ const Proxy = (): ProxyInterface => {
                          "Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas vestibulum ante a dolor sollicitudin, at tincidunt nulla eleifend. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In odio elit, rutrum vel mattis posuere, sollicitudin vel purus. Quisque in ornare arcu. Duis magna dui, pharetra at nisi at, interdum condimentum justo. Sed eu nulla tincidunt, rutrum arcu at, volutpat eros. Etiam porta erat magna, in sollicitudin sem placerat in. Duis vestibulum maximus sollicitudin. Nunc vestibulum magna dictum, ornare lorem in, commodo urna. Proin risus urna, congue sed auctor sed, commodo ut enim. Nunc venenatis tellus nec felis placerat hendrerit. Proin pulvinar est lectus, in mattis sapien tincidunt eget. Sed porttitor, ligula vitae commodo convallis, arcu sem tincidunt urna, nec dignissim nulla orci nec arcu.",
                     ],
                 date: "2020-10-29",
-                image: {
+                coverImage: {
                     src: "/events/event-meal.jpg",
                     alt: "People eating a meal."
                 }
@@ -273,7 +273,7 @@ const Proxy = (): ProxyInterface => {
                         "In sodales pulvinar leo ut sodales. Nam sed libero sed tellus blandit bibendum. Morbi vitae neque magna. Nam dictum magna commodo, varius justo scelerisque, elementum eros. Vestibulum pellentesque urna vulputate leo lacinia, vel lacinia metus scelerisque. Integer porttitor pretium rhoncus. Quisque nibh tellus, tempus ac volutpat sit amet, efficitur sit amet quam. Donec interdum nulla ac massa dapibus consectetur. Etiam cursus risus sed leo fermentum, at lobortis erat finibus. Praesent efficitur nulla at tellus ornare dignissim et non diam.",
                     ],
                 date: "2020-11-03",
-                image: {
+                coverImage: {
                     src: "/events/event-worship.jpg",
                     alt: "A chapel service."
                 }
@@ -288,7 +288,7 @@ const Proxy = (): ProxyInterface => {
                         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit eu ligula eu rutrum. Pellentesque scelerisque magna ut ipsum tempor, eget placerat est dapibus. Sed id dapibus neque, vitae ornare mi. Vestibulum ut dictum enim, at tristique ex. Praesent vestibulum turpis ut maximus luctus. Etiam venenatis ipsum sit amet velit consectetur, non sodales turpis sagittis. Quisque porta id nulla non ultrices. Mauris pretium eu ipsum ac consectetur. Morbi a dui eget leo commodo semper. Pellentesque quam neque, molestie eget finibus sit amet, cursus et urna. In malesuada ut tellus at porttitor. Maecenas faucibus felis massa, at semper lectus luctus ut. Fusce non luctus odio, at rutrum enim. Nulla sed aliquet tellus, id laoreet dolor. Ut nibh eros, faucibus sed fermentum vitae, vestibulum ut dolor. Fusce vel tempor ex.",
                     ],
                 date: "2020-11-04",
-                image: {
+                coverImage: {
                     src: "/events/event-service-project.jpg",
                     alt: "A service event."
                 }
@@ -304,7 +304,7 @@ const Proxy = (): ProxyInterface => {
                          "Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas vestibulum ante a dolor sollicitudin, at tincidunt nulla eleifend. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In odio elit, rutrum vel mattis posuere, sollicitudin vel purus. Quisque in ornare arcu. Duis magna dui, pharetra at nisi at, interdum condimentum justo. Sed eu nulla tincidunt, rutrum arcu at, volutpat eros. Etiam porta erat magna, in sollicitudin sem placerat in. Duis vestibulum maximus sollicitudin. Nunc vestibulum magna dictum, ornare lorem in, commodo urna. Proin risus urna, congue sed auctor sed, commodo ut enim. Nunc venenatis tellus nec felis placerat hendrerit. Proin pulvinar est lectus, in mattis sapien tincidunt eget. Sed porttitor, ligula vitae commodo convallis, arcu sem tincidunt urna, nec dignissim nulla orci nec arcu.",
                     ],
                 date: "2020-10-29",
-                image: {
+                coverImage: {
                     src: "/events/event-meal.jpg",
                     alt: "People eating a meal."
                 }
@@ -320,7 +320,7 @@ const Proxy = (): ProxyInterface => {
                         "In sodales pulvinar leo ut sodales. Nam sed libero sed tellus blandit bibendum. Morbi vitae neque magna. Nam dictum magna commodo, varius justo scelerisque, elementum eros. Vestibulum pellentesque urna vulputate leo lacinia, vel lacinia metus scelerisque. Integer porttitor pretium rhoncus. Quisque nibh tellus, tempus ac volutpat sit amet, efficitur sit amet quam. Donec interdum nulla ac massa dapibus consectetur. Etiam cursus risus sed leo fermentum, at lobortis erat finibus. Praesent efficitur nulla at tellus ornare dignissim et non diam.",
                     ],
                 date: "2020-11-03",
-                image: {
+                coverImage: {
                     src: "/events/event-worship.jpg",
                     alt: "A chapel service."
                 }
@@ -335,7 +335,7 @@ const Proxy = (): ProxyInterface => {
                         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit eu ligula eu rutrum. Pellentesque scelerisque magna ut ipsum tempor, eget placerat est dapibus. Sed id dapibus neque, vitae ornare mi. Vestibulum ut dictum enim, at tristique ex. Praesent vestibulum turpis ut maximus luctus. Etiam venenatis ipsum sit amet velit consectetur, non sodales turpis sagittis. Quisque porta id nulla non ultrices. Mauris pretium eu ipsum ac consectetur. Morbi a dui eget leo commodo semper. Pellentesque quam neque, molestie eget finibus sit amet, cursus et urna. In malesuada ut tellus at porttitor. Maecenas faucibus felis massa, at semper lectus luctus ut. Fusce non luctus odio, at rutrum enim. Nulla sed aliquet tellus, id laoreet dolor. Ut nibh eros, faucibus sed fermentum vitae, vestibulum ut dolor. Fusce vel tempor ex.",
                     ],
                 date: "2020-11-04",
-                image: {
+                coverImage: {
                     src: "/events/event-service-project.jpg",
                     alt: "A service event."
                 }

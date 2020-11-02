@@ -4,25 +4,28 @@ import Layout from "../components/Layout";
 import 'react-slideshow-image/dist/styles.css'
 import Events from "../components/Events";
 import client from "../lib/client"
+import {getEvents, getSlideshowImageUrls} from "../lib/api";
 
 export async function getStaticProps() {
-    const data = await client.fetch(`*[_type=="event"]`)
     return {
         props: {
-            data: data
+            events: await getEvents(),
+            slideshowImageUrls: await getSlideshowImageUrls()
         }
     }
 }
 
-export default function Home() {
+const IndexPage = (props) => {
     return (
         <Layout>
         <Head>
             <title>Lutheran Student Center</title>
             <link rel="icon" href="/favicon.ico" />
         </Head>
-            <Slideshow />
+            <Slideshow imageUrls={props.slideshowImageUrls} />
             <Events />
         </Layout>
     )
 }
+
+export default IndexPage

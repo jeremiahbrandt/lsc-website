@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "../components/Layout"
 import Head from "next/head";
 import {getAllBiographies} from "../lib/api";
-import {IBiography} from "../interfaces/iBiography";
+import {IBiography} from "../interfaces/IBiography";
 import Biographies from "../components/Biographies";
 
 export async function getStaticProps() {

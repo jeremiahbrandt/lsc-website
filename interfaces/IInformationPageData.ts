@@ -1,4 +1,4 @@
-import {IBiography} from "./iBiography";
+import {IBiography} from "./IBiography";
 
 interface IInformationPageData {
     lscBio: IBiography
