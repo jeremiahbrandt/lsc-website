@@ -41,7 +41,6 @@ main {
 :root {
     --alert-signup-bg: inherit;
     --alert-signup-color: inherit;
-    --bios-bg: var(--event-bg);
     --contact-form-bg: inherit;
     --contact-form-border: brown;
     --contact-form-color: inherit;
@@ -346,40 +345,3 @@ nav a:hover {
     background-color: var(--nav-a-bg-hover);
     color: var(--nav-a-cl-hover);
 }
-
-.bios {
-    background-color: var(--bios-bg);
-    padding: 30px 30px;
-}
-
-.bio:nth-of-type(odd) {
-    grid-template-columns: 5fr 3fr;
-    grid-template: "bioHeader bioHeader" "p img";
-}
-
-.bio:nth-of-type(even) {
-    grid-template-columns: 3fr 5fr;
-    grid-template: "bioHeader bioHeader" "img p";
-}
-
-.bio {
-    align-items: center;
-    display: grid;
-    grid-column-gap: 20px;
-}
-
-.bio-header {
-    grid-area: bioHeader;
-    text-align: center;
-}
-
-.bio-paragraphs {
-    grid-area: p;
-}
-
-.bio-image {
-    border-radius: 50px;
-    grid-area: img;
-    width: 100%;
-}
-
