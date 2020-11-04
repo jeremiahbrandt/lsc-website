@@ -4,7 +4,7 @@ import ProxyInterface from "../interfaces/IProxy"
 import {IImage} from "../interfaces/IImage";
 import {IEvent} from "../interfaces/IEvent";
 import {IBiography} from "../interfaces/IBiography";
-import {IContactPageData} from "../interfaces/IContactPageData";
+import {IContactPageContent} from "../interfaces/IContactPageContent";
 import {IFooterProps} from "../interfaces/IFooterProps";
 
 const Proxy = (): ProxyInterface => {
@@ -27,7 +27,7 @@ const Proxy = (): ProxyInterface => {
         return dummyData
     }
 
-    const getContactPageData = (): IContactPageData => {
+    const getContactPageData = (): IContactPageContent => {
         const hoursOfOperation = [
             {
                 day: "Sunday",

@@ -1,7 +1,6 @@
 export interface IBiography {
     name: string
     position: string
-    bio: string[]
-    imageUrl, string
+    image: string
     blockContent: object[]
 }

@@ -2,14 +2,14 @@ import IInformationPageData from "./IInformationPageData";
 import INavigationData from "./INavigationData";
 import {IImage} from "./IImage";
 import {IEvent} from "./IEvent";
-import {IContactPageData} from "./IContactPageData";
+import {IContactPageContent} from "./IContactPageContent";
 import {IFooterProps} from "./IFooterProps";
 
 interface Proxy {
     getNavigationLinks: () => INavigationData
     getInformationPageData: () => IInformationPageData
     getSlideshowFiles: () => IImage[]
-    getContactPageData: () => IContactPageData
+    getContactPageData: () => IContactPageContent
     getEventData: () => IEvent[]
     getFooterProps: () => IFooterProps
 }

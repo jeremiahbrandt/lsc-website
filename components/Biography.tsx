@@ -7,7 +7,7 @@ const Biography: React.FC<IBiography> = (props: IBiography) => {
     return (
         <div className={styles.biography}>
             <div className={styles.title}> {props.name}, {props.position}</div>
-            <img className={styles.img} src={props.imageUrl} alt={`Image of ${props.name}.`} />
+            <img className={styles.img} src={props.image} alt={`Image of ${props.name}.`} />
             <BlockContent className={styles.blockContent} blocks={props.blockContent} />
         </div>
     )

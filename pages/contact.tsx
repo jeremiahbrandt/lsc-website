@@ -1,24 +1,28 @@
 import Layout from "../components/Layout"
 import ContactForm from "../components/ContactForm";
-import Proxy from "../hooks/useProxy";
-import {IContactPageData} from "../interfaces/IContactPageData";
-import DayOfOperation from "../components/DayOfOperation";
+import {IContactPageContent} from "../interfaces/IContactPageContent";
 import React from "react";
+import {getContactPageContent, getSiteConfig} from "../lib/api";
+import {IConfig} from "../interfaces/IConfig";
+import DaysOfOperation from "../components/DaysOfOperation";
 
 export async function getStaticProps() {
     return {
-        props: Proxy.getContactPageData()
+        props: {
+            content: await getContactPageContent(),
+            config: await getSiteConfig()
+        }
     }
 }
 
-const ContactPage:React.FunctionComponent<IContactPageData> = (props) => {
+const ContactPage = (props: {content: IContactPageContent, config: IConfig}) => {
     return (
-        <Layout title={"Contact"}>
+        <Layout title={"Contact"} config={props.config}>
             <div className={"contact-page"}>
                 <ContactForm />
                 <div className={"hours-of-operation"}>
-                    <h1 className={"hours-of-operation-title"}>Hours</h1>
-                    {props.hoursOfOperation.map((item, index) => <DayOfOperation key={`dayOfOperation${index}`}{...item} />)}
+                    <h1 className={"hours-of-operation-title"}>{props.content.sectionTitle}</h1>
+                    <DaysOfOperation days={props.content.daysOfOperation} />
                 </div>
             </div>
         </Layout>

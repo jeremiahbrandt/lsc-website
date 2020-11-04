@@ -1,22 +1,23 @@
 import React from "react";
 import Layout from "../components/Layout"
-import {getAllBiographies} from "../lib/api";
-import {IBiography} from "../interfaces/IBiography";
+import {getAboutPageContent, getSiteConfig} from "../lib/api";
 import Biographies from "../components/Biographies";
+import {IAboutPageContent} from "../interfaces/IAboutPageContent";
+import {IConfig} from "../interfaces/IConfig";
 
 export async function getStaticProps() {
-    const [biographies] = await Promise.all([getAllBiographies()])
     return {
         props: {
-            biographies
+            content: await getAboutPageContent(),
+            config: await getSiteConfig()
         }
     }
 }
 
-const aboutPage = ({biographies}: { biographies: IBiography[] }) => {
+const aboutPage = (props: {content: IAboutPageContent, config: IConfig}) => {
     return (
-        <Layout title={"about"}>
-            <Biographies biographies={biographies} />
+        <Layout title={"about"} config={props.config}>
+            <Biographies biographies={props.content.biographies} />
         </Layout>
     )
 }

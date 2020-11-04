@@ -1,11 +1,11 @@
-import {IHourOfOperation} from "../interfaces/IHourOfOperation";
+import {IDayOfOperation} from "../interfaces/IDayOfOperation";
 import React from "react";
 
-const DayOfOperation : React.FC<IHourOfOperation>= (props) => {
+const DayOfOperation : React.FC<{day: IDayOfOperation}>= ({day}) => {
     return (
         <div className={"day-of-operation"}>
-            <div className={"text-right"}>{props.day}</div>
-            <div className={"text-left"}>{props.hours}</div>
+            <div className={"text-right"}>{day.dayOfWeek}</div>
+            <div className={"text-left"}>{day.hoursOfOperation}</div>
         </div>
     )
 }

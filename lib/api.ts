@@ -1,29 +1,63 @@
-import {IBiography} from "../interfaces/IBiography";
 import client from "./client";
-import {IEvent} from "../interfaces/IEvent";
+import {IConfig} from "../interfaces/IConfig";
+import {IHomePageContent} from "../interfaces/IHomePageContent";
+import {IAboutPageContent} from "../interfaces/IAboutPageContent";
+import {IContactPageContent} from "../interfaces/IContactPageContent";
 
-export async function getAllBiographies(): Promise<IBiography[]> {
+export async function getSiteConfig(): Promise<IConfig> {
     return await client.fetch(`
-        *[_type=="bio"]{
-            ...,
-            "imageUrl": image.asset->url
-        }`
-    )
+        *[_type=="site-config"][0] {
+          siteTitle,
+          phoneNumber,
+          emailAddress,
+          address,
+          "socialMediaLinks": socialMediaLinks[] {
+            url,
+            "image": image.asset->url
+          },
+        }
+    `)
 }
 
-export async function getSlideshowImageUrls(): Promise<{imageUrl: string}> {
+export async function getHomePageContent(): Promise<IHomePageContent> {
     return await client.fetch(`
-        *[_type=="slideshowImages"]{
-          "imageUrl": slideshowImage.asset->url
-        }`
-    )
+        *[_type == "homePage"][0] {
+            eventsSectionTitle,
+            "events": events[]{
+                name,
+                startTime,
+                endTime,
+                location,
+                content,
+                "coverImage": coverImage.asset->url
+            },
+            "slideshowImages": slideshowImages[].asset->url
+        }
+    `)
 }
 
-export async function getEvents(): Promise<{events: IEvent[]}> {
+export async function getAboutPageContent(): Promise<IAboutPageContent> {
     return await client.fetch(`
-        *[_type=="event"] {
-          ...,
-          "coverImageUrl": coverImage.asset->url
+        *[_type == "aboutPage"][0] {
+            aboutPageTitle,
+            "biographies": biographies[]{
+                name,
+                position,
+                "image": image.asset->url,
+                blockContent
+            }
+        }
+    `)
+}
+
+export async function getContactPageContent(): Promise<IContactPageContent> {
+    return await client.fetch(`
+        *[_type == "contactPage"][0] {
+            sectionTitle,
+            "daysOfOperation": daysOfOperation[]{
+                dayOfWeek,
+                hoursOfOperation
+            }
         }
     `)
 }

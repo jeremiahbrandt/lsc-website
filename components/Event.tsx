@@ -57,7 +57,7 @@ const Event:React.FC<IEvent> = (event: IEvent) => {
     return (
         <div className={styles.event}>
             <div className={styles.name}>{event.name}</div>
-            <img className={styles.image} src={event.coverImageUrl} alt={`Cover image for the event, ${event.name}.`}/>
+            <img className={styles.image} src={event.coverImage} alt={`Cover image for the event, ${event.name}.`}/>
             <div className={styles.timeLocation}>
                 <div className={styles.time}><b>When:</b> {getDay()}, {getTime()}</div>
                 <div className={styles.location}><b>Location:</b> {event.location}</div>
