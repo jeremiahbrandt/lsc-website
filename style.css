@@ -2,14 +2,6 @@ body {
     margin: 0;
 }
 
-.events {
-    background-color: var(--events-bg);
-    display: grid;
-    grid-row-gap: 40px;
-    grid-template-columns: 1fr;
-    justify-items: center;
-}
-
 main {
     background-color: var(--main-bg);
     color: var(--main-color);
@@ -20,22 +12,6 @@ main {
 
 .main-wrapper {
     background-color: var(--main-wrapper-bg);
-}
-
-.events-page-title {
-    background-color: #d9f4f8;
-    margin: 0;
-    padding: 20px 0;
-    text-align: center;
-}
-
-.event {
-    background-color: var(--event-bg);
-    border-radius: 10px;
-    border: 1px solid black;
-    color: var(--event-cl);
-    display: grid;
-    text-align: center;
 }
 
 :root {
@@ -65,32 +41,6 @@ main {
     --nav-cl: #3d3d3d;
     font-family: 'Noto Sans JP', sans-serif;
 }
-
-.event-title {
-    color: var(--event-title-cl);
-}
-
-.event section {
-    color: var(--event-section-cl);
-    display: grid;
-    margin: 0 auto;
-    text-align: left;
-}
-
-.event img {
-    margin: 0 auto;
-    max-height: 300px;
-    max-width: 750px;
-    padding-bottom: 20px;
-}
-
-.event p {
-    color: var(--event-p-cl);
-    margin: 0;
-    padding: 20px;
-    text-align: left;
-}
-
 .hours-of-operation {
     display: grid;
     grid-row-gap: 10px;

@@ -1,6 +1,5 @@
 import React from "react";
 import Layout from "../components/Layout"
-import Head from "next/head";
 import {getAllBiographies} from "../lib/api";
 import {IBiography} from "../interfaces/IBiography";
 import Biographies from "../components/Biographies";
@@ -16,10 +15,7 @@ export async function getStaticProps() {
 
 const aboutPage = ({biographies}: { biographies: IBiography[] }) => {
     return (
-        <Layout>
-            <Head>
-                <title>LSC - About</title>
-            </Head>
+        <Layout title={"about"}>
             <Biographies biographies={biographies} />
         </Layout>
     )

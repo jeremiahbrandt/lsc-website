@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Slideshow from "../components/SlideShow";
 import Layout from "../components/Layout";
 import 'react-slideshow-image/dist/styles.css'
@@ -16,11 +15,7 @@ export async function getStaticProps() {
 
 const IndexPage = (props) => {
     return (
-        <Layout>
-        <Head>
-            <title>Lutheran Student Center</title>
-            <link rel="icon" href="/favicon.ico" />
-        </Head>
+        <Layout title={"Home"} >
             <Slideshow imageUrls={props.slideshowImageUrls} />
             <Events events={props.events} />
         </Layout>
