@@ -1,17 +1,20 @@
 import styles from "../css/ContactForm.module.css"
+import React from "react"
 
 const ContactForm = () => {
     return (
         <form className={styles.form} action="">
-            <h1 className={styles.title}>Send a Message</h1>
-            <label className={styles.nameLabel} htmlFor="name">Name:</label>
-            <input className={`${styles.input} ${styles.nameInput}`} type="text" name="name" required/>
-            <label className={styles.phoneLabel} htmlFor="phone">Phone Number:</label>
-            <input className={`${styles.input} ${styles.phoneInput}`} type="tel" name="phone" />
-            <label className={styles.emailLabel} htmlFor="email">Email Address:</label>
-            <input className={`${styles.input} ${styles.emailInput}`} type="email" name="email" />
-            <label className={styles.messageLabel} htmlFor="message">Message:</label>
-            <textarea className={`${styles.input} ${styles.messageInput}`} name="message" />
+            <div className={styles.title}>Send a Message</div>
+            <div className={styles.inputs}>
+                <label className={styles.label} htmlFor="name">Name:</label>
+                <input className={styles.input} type="text" name="name" required/>
+                <label className={styles.label} htmlFor="phone">Phone Number:</label>
+                <input className={styles.input} type="tel" name="phone" />
+                <label className={styles.label} htmlFor="email">Email Address:</label>
+                <input className={styles.input} type="email" name="email" />
+                <label className={styles.label} htmlFor="message">Message:</label>
+                <textarea className={styles.textarea} name="message" />
+            </div>
             <input className={`${styles.input} ${styles.submit}`} type="submit" value="Send" />
         </form>
     )
