@@ -2,18 +2,6 @@ body {
     margin: 0;
 }
 
-main {
-    background-color: var(--main-bg);
-    color: var(--main-color);
-    margin: 0 auto;
-    max-width: 900px;
-    width: 90%;
-}
-
-.main-wrapper {
-    background-color: var(--main-wrapper-bg);
-}
-
 :root {
     --event-bg: #d9f4f8;
     --event-cl: #470d0d;
@@ -22,9 +10,6 @@ main {
     --event-title-cl: #111111;
     --events-bg: inherit;
     --header-bg: #e3e2e2;
-    --main-bg: inherit;
-    --main-color: black;
-    --main-wrapper-bg: #e6f2fd;
     --nav-a-bg-hover: #c7c7c7;
     --nav-a-cl-hover: #555454;
     --nav-bg: #inherit;
@@ -37,10 +22,6 @@ main {
     background-color: var(--header-bg);
     display: grid;
     height: 60px;
-}
-
-.viewport {
-    width: 3750px;
 }
 
 header {

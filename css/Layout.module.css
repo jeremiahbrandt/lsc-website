@@ -1,0 +1,10 @@
+.mainWrapper {
+    justify-content: center;
+    background-color: #dbd6d5;
+}
+
+.main {
+    background-color: #ece8e8;
+    color: black;
+    padding:20px 0;
+}

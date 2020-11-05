@@ -1,11 +1,12 @@
-import { Slide } from 'react-slideshow-image';
+import { Fade} from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 import React from "react";
+import styles from "../css/Slideshow.module.css"
 
 const Slideshow: React.FC<{ imageUrls: string[] }> = ({imageUrls}) => {
     return (
-        <div>
-            <Slide easing="ease">
+        <div className={styles.slideshow}>
+            <Fade scale={0.4} transitionDuration={1500}>
                 {imageUrls.map((url, index) => {
                     return (
                         <div className="each-slide" key={`slide${index}`}>
@@ -18,7 +19,7 @@ const Slideshow: React.FC<{ imageUrls: string[] }> = ({imageUrls}) => {
 
                     )
                 })}
-            </Slide>
+            </Fade>
         </div>
     )
 }

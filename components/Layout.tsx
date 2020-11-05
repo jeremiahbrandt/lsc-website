@@ -3,6 +3,7 @@ import Header from "./Header";
 import Head from "next/head";
 import {IConfig} from "../interfaces/cmsQueries/pages/IConfig";
 import React from "react";
+import styles from "../css/Layout.module.css"
 
 const Layout:React.FC<{title: string, config: IConfig}> = ({children, title,config}) => {
     return (
@@ -12,10 +13,10 @@ const Layout:React.FC<{title: string, config: IConfig}> = ({children, title,conf
                 <title>Lutheran Student Center | {title}</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <div className={"main-wrapper"}>
-                <main>
+            <div className={styles.mainWrapper}>
+                <div className={styles.main}>
                     {children}
-                </main>
+                </div>
             </div>
             <Footer {...config} />
         </div>
