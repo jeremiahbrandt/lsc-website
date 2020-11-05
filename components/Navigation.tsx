@@ -6,7 +6,7 @@ const Navigation = () => {
     return (
         <nav>
             {
-                links.map(entry => <Link href={entry.url}><a>{entry.name}</a></Link>)
+                links.map((link, index) => <Link key={`navLink${index}`} href={link.url}><a>{link.name}</a></Link>)
             }
         </nav>
     )
