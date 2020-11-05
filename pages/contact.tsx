@@ -20,8 +20,7 @@ const ContactPage = (props: {content: IContactPageContent, config: IConfig}) => 
         <Layout title={"Contact"} config={props.config}>
             <div className={"contact-page"}>
                 <div className={"hours-of-operation"}>
-                    <h1 className={"hours-of-operation-title"}>{props.content.sectionTitle}</h1>
-                    <DaysOfOperation days={props.content.daysOfOperation} />
+                    <DaysOfOperation days={props.content.daysOfOperation} sectionTitle={props.content.sectionTitle} />
                 </div>
                 <ContactForm />
             </div>
