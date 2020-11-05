@@ -1,12 +1,12 @@
 import Link from 'next/link'
+import {getNavigationLinks} from "../lib/navigation";
 
 const Navigation = () => {
-    /*TODO: Fix links */
-    const data =[]
+    const links = getNavigationLinks()
     return (
         <nav>
             {
-                data.map(entry => <Link href={entry.url}><a>{entry.name}</a></Link>)
+                links.map(entry => <Link href={entry.url}><a>{entry.name}</a></Link>)
             }
         </nav>
     )
