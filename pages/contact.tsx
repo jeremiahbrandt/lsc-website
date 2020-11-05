@@ -5,6 +5,7 @@ import React from "react";
 import {getContactPageContent, getSiteConfig} from "../lib/api";
 import {IConfig} from "../interfaces/cmsQueries/pages/IConfig";
 import DaysOfOperation from "../components/DaysOfOperation";
+import styles from "../css/ContactPage.module.css"
 
 export async function getStaticProps() {
     return {
@@ -18,10 +19,8 @@ export async function getStaticProps() {
 const ContactPage = (props: {content: IContactPageContent, config: IConfig}) => {
     return (
         <Layout title={"Contact"} config={props.config}>
-            <div className={"contact-page"}>
-                <div className={"hours-of-operation"}>
-                    <DaysOfOperation days={props.content.daysOfOperation} sectionTitle={props.content.sectionTitle} />
-                </div>
+            <div className={styles.page}>
+                <DaysOfOperation days={props.content.daysOfOperation} sectionTitle={props.content.sectionTitle} />
                 <ContactForm />
             </div>
         </Layout>
