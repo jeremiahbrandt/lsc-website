@@ -1,0 +1,67 @@
+.form {
+    border-radius: 10px;
+    color: var(--contact-form-color);
+    display: grid;
+    grid-row-gap: 10px;
+    grid-template:         "title title" 50px        "nameLabel nameInput" 35px        "phoneLabel phoneInput" 35px        "emailLabel emailInput" 35px        "messageLabel messageInput" 70px        "submitButton submitButton" 30px        /3fr 5fr;
+    max-width: 750px;
+    padding: 10px 20px 10px 20px;
+    text-align: right;
+    width: 100%;
+    background-color: var(--contact-form-bg);
+}
+
+.title {
+    font-size: 25px;
+    grid-area: title;
+    text-align: center;
+}
+
+.input {
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.label {
+    align-items: center;
+    display: grid;
+    padding-right: 10px;
+}
+
+.submit {
+    grid-area: submitButton;
+    width: 200px;
+    justify-self: right;
+}
+
+.nameLabel {
+    grid-area: nameLabel;
+}
+
+.nameInput {
+    grid-area: nameInput;
+}
+
+.phoneLabel {
+    grid-area: phoneLabel;
+}
+
+.phoneInput {
+    grid-area: phoneInput;
+}
+
+.emailLabel {
+    grid-area: emailLabel;
+}
+
+.emailInput {
+    grid-area: emailInput;
+}
+
+.messageLabel {
+    grid-area: messageLabel;
+}
+
+.messageInput {
+    grid-area: messageInput;
+}
