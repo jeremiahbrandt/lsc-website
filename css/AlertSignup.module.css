@@ -36,3 +36,13 @@
     height: 35px;
     justify-self: right;
 }
+
+@media screen and (max-width: 750px) {
+    .form {
+        width: 80%;
+    }
+
+    .submit {
+        justify-self: center;
+    }
+}

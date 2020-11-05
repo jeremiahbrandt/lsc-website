@@ -1,7 +1,10 @@
+.wrapper {
+    grid-area: links;
+}
+
 .nav {
     align-items: center;
     display: grid;
-    grid-area: links;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 100%;
     height: 60px;
@@ -21,4 +24,41 @@
 .link:hover {
     background-color: #3d3d3d;
     color: #dedcdc;
+}
+
+
+@media screen and (max-width: 750px) {
+    .wrapper {
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px auto;
+    }
+
+    .hamburger {
+        display: grid;
+        align-content: space-around;
+        width: 45px;
+        justify-self: right;
+        margin-right: 30px;
+    }
+
+    .hamburgerLine {
+        height: 7px;
+        border-radius: 15px;
+        background-color: #1d0e0e;
+    }
+
+    .nav {
+        grid-template-columns: unset;
+        grid-template-rows: unset;
+        grid-auto-flow: row;
+        height: 0px;
+        overflow: hidden;
+        transition: height 0.4s ease-out;
+    }
+
+    .navShown {
+        height: 500px;
+    }
 }
