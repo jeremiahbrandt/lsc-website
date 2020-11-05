@@ -1,4 +1,19 @@
 .events {
+    grid-template-areas: "title" "eventsList";
+    grid-row-gap: 20px;
+    display: grid;
+    justify-content: center;
+}
+
+.title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    grid-area: title;
+}
+
+.eventsList {
+    grid-area: eventsList;
     display: grid;
     grid-row-gap: 20px;
     justify-content: center;

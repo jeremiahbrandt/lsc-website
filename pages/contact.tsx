@@ -1,9 +1,9 @@
 import Layout from "../components/Layout"
 import ContactForm from "../components/ContactForm";
-import {IContactPageContent} from "../interfaces/IContactPageContent";
+import {IContactPageContent} from "../interfaces/cmsQueries/pages/IContactPageContent";
 import React from "react";
 import {getContactPageContent, getSiteConfig} from "../lib/api";
-import {IConfig} from "../interfaces/IConfig";
+import {IConfig} from "../interfaces/cmsQueries/pages/IConfig";
 import DaysOfOperation from "../components/DaysOfOperation";
 
 export async function getStaticProps() {

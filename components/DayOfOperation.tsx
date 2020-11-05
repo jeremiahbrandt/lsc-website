@@ -1,4 +1,4 @@
-import {IDayOfOperation} from "../interfaces/IDayOfOperation";
+import {IDayOfOperation} from "../interfaces/cmsQueries/objects/IDayOfOperation";
 import React from "react";
 
 const DayOfOperation : React.FC<{day: IDayOfOperation}>= ({day}) => {

@@ -1,0 +1,11 @@
+.socialMediaLinks {
+    display: grid;
+    justify-content: right;
+    align-items: baseline;
+    align-content: baseline;
+}
+
+.socialMediaImg {
+    max-width: 36px;
+    max-height: 36px;
+}

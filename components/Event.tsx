@@ -1,4 +1,4 @@
-import {IEvent} from "../interfaces/IEvent";
+import {IEvent} from "../interfaces/cmsQueries/objects/IEvent";
 import styles from "../css/Event.module.css"
 import React from "react";
 import BlockContent from "@sanity/block-content-to-react"

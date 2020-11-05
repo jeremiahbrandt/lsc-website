@@ -1,4 +1,4 @@
-import {IBiography} from "../interfaces/IBiography";
+import {IBiography} from "../interfaces/cmsQueries/objects/IBiography";
 import React from "react";
 import BlockContent from "@sanity/block-content-to-react"
 import styles from "../css/Biography.module.css"

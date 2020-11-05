@@ -1,8 +1,8 @@
-import Proxy from "../hooks/useProxy"
 import Link from 'next/link'
 
 const Navigation = () => {
-    const data = Proxy.getNavigationLinks()
+    /*TODO: Fix links */
+    const data =[]
     return (
         <nav>
             {

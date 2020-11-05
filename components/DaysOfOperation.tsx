@@ -1,5 +1,5 @@
 import React, {FC} from "react";
-import {IDayOfOperation} from "../interfaces/IDayOfOperation";
+import {IDayOfOperation} from "../interfaces/cmsQueries/objects/IDayOfOperation";
 import DayOfOperation from "./DayOfOperation";
 
 const DaysOfOperation:FC<{days: IDayOfOperation[]}> = ({days}) => {

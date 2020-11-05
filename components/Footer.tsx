@@ -1,10 +1,9 @@
-import React from "react";
+import React, {FC} from "react";
 import { useState } from "react"
-import Proxy from "../hooks/useProxy";
+import {IConfig} from "../interfaces/cmsQueries/pages/IConfig";
+import styles from "../css/Footer.module.css"
 
-const Footer = () => {
-    const data = Proxy.getFooterProps()
-
+const Footer:FC<IConfig> = (config) => {
     const [selection, setSelection] = useState("email");
 
     const handleSelectionChange  = (e: React.FormEvent<HTMLSelectElement>) => {
@@ -16,20 +15,21 @@ const Footer = () => {
             <div className={"footer-top"}>
                 <div className={"contact-information"}>
                     <span className={"contact-item"} id={"phoneEmail"}>
-                        <a href={`tel:${data.phone}`} className={"footer-link"} id={"phone"}>
-                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path> </svg>
-                            <span>{data.phone}</span>
+                        <a href={`tel:${config.phoneNumber}`} className={"footer-link"} id={"phone"}>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"> <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/> </svg>
+                            <span>{config.phoneNumber}</span>
                         </a>
-                        <a href={`mailto:${data.email}`} className={"footer-link"} id={"email"}>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path> <polyline points="22,6 12,13 2,6"></polyline> </svg>
-                            <span>{data.email}</span>
+                        <a href={`mailto:${config.emailAddress}`} className={"footer-link"} id={"email"}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"> <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/> <polyline points="22,6 12,13 2,6"/> </svg>
+                            <span>{config.emailAddress}</span>
                         </a>
                     </span>
                     <span className={"contact-item"} id={"address"}>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path> <circle cx="12" cy="10" r="3"></circle> </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"> <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/> <circle cx="12" cy="10" r="3"/> </svg>
                         <span id={"street-address"}>
-                            <span>{data.address.addressNumber} {data.address.street}</span>
-                            <span>{data.address.city} {data.address.state}, {data.address.zip}</span>
+                            <span>{config.address.addressLineOne}</span>
+                            <span>{config.address.addressLineTwo}</span>
+                            <span>{config.address.city} {config.address.state}, {config.address.zipCode}</span>
                         </span>
                     </span>
                 </div>
@@ -45,17 +45,13 @@ const Footer = () => {
                         <input type="submit" value="Sign Up" />
                     </form>
                 </div>
-                <div className={"social-media"}>
-                    <a href={data.socialMedia.facebookURL}>
-                        <svg>
-                            <rect fill="#3B5998" width="36" height="36"/>
-                            <path fill="#FFFFFF" d="M30.895,16.535l-0.553,5.23h-4.181v15.176h-6.28V21.766H16.75v-5.23h3.131v-3.149
-	c0-4.254,1.768-6.796,6.796-6.796h4.181v5.23h-2.615c-1.952,0-2.081,0.736-2.081,2.1v2.615H30.895z"/>
-                        </svg>
-                    </a>
+                <div className={styles.socialMediaLinks}>
+                    {
+                        config.socialMediaLinks.map((link, index) => <a key={`socialMediaLink${index}`} href={link.url}><img src={link.image} className={styles.socialMediaImg}  alt={"The logo."}/></a>)
+                    }
                 </div>
             </div>
-            <div className="copyright">Copyright &copy; {new Date().getFullYear()} Lutheran Student Center</div>
+            <div className="copyright">Copyright &copy; {new Date().getFullYear()} {config.siteTitle}</div>
         </footer>
     )
 }

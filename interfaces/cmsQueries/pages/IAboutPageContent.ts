@@ -1,4 +1,4 @@
-import {IBiography} from "./IBiography";
+import {IBiography} from "../objects/IBiography";
 
 export interface IAboutPageContent {
     aboutPageTitle: string,

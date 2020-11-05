@@ -4,8 +4,8 @@ import 'react-slideshow-image/dist/styles.css'
 import Events from "../components/Events";
 import {getHomePageContent, getSiteConfig} from "../lib/api";
 import React from "react";
-import {IHomePageContent} from "../interfaces/IHomePageContent";
-import {IConfig} from "../interfaces/IConfig";
+import {IHomePageContent} from "../interfaces/cmsQueries/pages/IHomePageContent";
+import {IConfig} from "../interfaces/cmsQueries/pages/IConfig";
 
 export async function getStaticProps() {
     return {
@@ -20,7 +20,7 @@ const IndexPage = (props: {content: IHomePageContent, config: IConfig}) => {
     return (
         <Layout title={"Home"} config={props.config} >
             <Slideshow imageUrls={props.content.slideshowImages} />
-            <Events events={props.content.events} />
+            <Events events={props.content.events} sectionTitle={props.content.eventsSectionTitle} />
         </Layout>
     )
 }

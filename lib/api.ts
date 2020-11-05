@@ -1,13 +1,14 @@
 import client from "./client";
-import {IConfig} from "../interfaces/IConfig";
-import {IHomePageContent} from "../interfaces/IHomePageContent";
-import {IAboutPageContent} from "../interfaces/IAboutPageContent";
-import {IContactPageContent} from "../interfaces/IContactPageContent";
+import {IConfig} from "../interfaces/cmsQueries/pages/IConfig";
+import {IHomePageContent} from "../interfaces/cmsQueries/pages/IHomePageContent";
+import {IAboutPageContent} from "../interfaces/cmsQueries/pages/IAboutPageContent";
+import {IContactPageContent} from "../interfaces/cmsQueries/pages/IContactPageContent";
 
 export async function getSiteConfig(): Promise<IConfig> {
     return await client.fetch(`
         *[_type=="site-config"][0] {
           siteTitle,
+          "logo": logo.asset->url,
           phoneNumber,
           emailAddress,
           address,

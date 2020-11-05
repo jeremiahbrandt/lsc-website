@@ -2,8 +2,8 @@ import React from "react";
 import Layout from "../components/Layout"
 import {getAboutPageContent, getSiteConfig} from "../lib/api";
 import Biographies from "../components/Biographies";
-import {IAboutPageContent} from "../interfaces/IAboutPageContent";
-import {IConfig} from "../interfaces/IConfig";
+import {IAboutPageContent} from "../interfaces/cmsQueries/pages/IAboutPageContent";
+import {IConfig} from "../interfaces/cmsQueries/pages/IConfig";
 
 export async function getStaticProps() {
     return {

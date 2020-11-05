@@ -1,11 +1,12 @@
 import Navigation from "./Navigation";
 import Link from "next/link";
+import React, {FC} from "react";
 
-const Header = () => {
+const Header:FC<{logo: string}> = ({logo}) => {
     return (
         <div className={"header-wrapper"}>
             <header>
-                <Link href={"/"}><img src={"vercel.svg"} alt={"logo"} /></Link>
+                <Link href={"/"}><img src={logo} alt={"logo"} /></Link>
                 <Navigation />
             </header>
         </div>

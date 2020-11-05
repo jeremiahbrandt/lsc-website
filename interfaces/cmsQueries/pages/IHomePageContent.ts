@@ -1,7 +1,7 @@
-import {IEvent} from "./IEvent";
+import {IEvent} from "../objects/IEvent";
 
 export interface IHomePageContent {
-    eventSectionTitle: string,
+    eventsSectionTitle: string,
     events: IEvent[],
     slideshowImages: string[]
 }

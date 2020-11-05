@@ -1,5 +1,5 @@
 import React from "react";
-import {IBiography} from "../interfaces/IBiography";
+import {IBiography} from "../interfaces/cmsQueries/objects/IBiography";
 import Biography from "./Biography";
 
 const Biographies: React.FC<{biographies:  IBiography[]}> = ({biographies}: {biographies:  IBiography[] }) => {
