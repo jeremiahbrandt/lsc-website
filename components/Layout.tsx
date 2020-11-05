@@ -10,6 +10,7 @@ const Layout:React.FC<{title: string, config: IConfig}> = ({children, title,conf
         <div className={"layout"}>
             <Header logo={config.logo} />
             <Head>
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <title>Lutheran Student Center | {title}</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
