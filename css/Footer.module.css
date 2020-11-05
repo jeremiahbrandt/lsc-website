@@ -1,4 +1,58 @@
+.footer {
+    background-color: #311e1e;
+    color: #bbbaba;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 50px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.top {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 30px 0;
+    width: 100%;
+}
+
+.contactInformation {
+    display: grid;
+    grid-row-gap: 25px;
+    justify-items: left;
+    padding-left: 100px;
+}
+
+.phoneEmail {
+    align-content: center;
+    display: grid;
+    grid-row-gap: 10px;
+    grid-template-columns: 1fr;
+}
+
+.link {
+    display: grid;
+    grid-column-gap: 10px;
+    grid-template-columns: auto auto;
+    justify-content: left;
+    text-decoration: none;
+    color: inherit;
+}
+
+.address {
+    align-items: center;
+    display: grid;
+    grid-column-gap: 10px;
+    grid-template-columns: auto auto;
+    justify-content: left;
+}
+
+.streetAddress {
+    align-content: center;
+    display: grid;
+}
+
 .socialMediaLinks {
+    margin-right: 100px;
     display: grid;
     justify-content: right;
     align-items: baseline;
@@ -8,4 +62,12 @@
 .socialMediaImg {
     max-width: 36px;
     max-height: 36px;
+}
+
+.copyright {
+    align-items: center;
+    background-color: #1d0e0e;
+    display: grid;
+    text-align: center;
+    width: 100%;
 }
