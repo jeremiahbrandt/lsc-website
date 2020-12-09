@@ -41,7 +41,16 @@ const Event:React.FC<IEvent> = (event: IEvent) => {
         if(date.getMinutes() <= 9)
             minutes = "0" + minutes
 
-        return date.getHours() + ":" + minutes
+        let hours:number = date.getHours()
+        let hourLabel = " AM"
+
+        if(hours >= 12)
+            hourLabel = " PM"
+
+        if(hours > 12)
+            hours-=12
+
+        return hours + ":" + minutes + hourLabel
     }
 
     const getDay = ():string => {
