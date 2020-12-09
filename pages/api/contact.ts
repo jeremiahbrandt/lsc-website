@@ -11,12 +11,11 @@ let transporter = nodemailer.createTransport({
 let mailOptions = {
     from: process.env.emailFrom,
     to: process.env.emailTo,
-    subject: 'Email from Node-App: A Test Message!',
+    subject: 'LSC Website Contact Form',
     text: 'This was sent with environment variables'
 };
 
 export default function handler(req, res) {
-    console.log("Request received!")
 
     transporter.sendMail(mailOptions, function(error, info){
         if (error) {

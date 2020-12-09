@@ -7,14 +7,14 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 100%;
-    height: 80px;
+    height: 60px;
 }
 
 .link {
     align-items: center;
     color: #c7c7c7;
     display: grid;
-    font-size: 20px;
+    font-size: 18px;
     height: 100%;
     padding: 0 15px;
     text-align: center;
@@ -32,7 +32,7 @@
         display: grid;
         grid-auto-flow: column;
         grid-template-columns: 1fr;
-        grid-template-rows: 80px auto;
+        grid-template-rows: 60px auto;
         background-color: #3d3d3d;
     }
 

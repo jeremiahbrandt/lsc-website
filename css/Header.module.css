@@ -2,14 +2,14 @@
     align-content: center;
     background-color: #5a5656;
     display: grid;
-    height: 80px;
+    height: 60px;
 }
 
 .header {
     align-items: center;
     display: grid;
     grid-template: "logo links";
-    max-height: 80px;
+    max-height: 60px;
     padding: 0 50px;
 }
 
