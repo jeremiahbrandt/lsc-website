@@ -13,7 +13,7 @@ const Slideshow: React.FC<{ imageUrls: string[] }> = ({imageUrls}) => {
                             <div style={{
                                 'backgroundImage': `url(${url})`,
                                 "backgroundPosition": "center",
-                                "height": "35vw"
+                                "height": "40vw"
                             }}>
                             </div>
                         </div>
