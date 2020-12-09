@@ -4,7 +4,7 @@ import React from "react";
 import styles from "../css/Slideshow.module.css"
 
 const Slideshow: React.FC<{ imageUrls: string[] }> = ({imageUrls}) => {
-    return (
+   return (
         <div className={styles.slideshow}>
             <Fade scale={0.4} transitionDuration={1500}>
                 {imageUrls.map((url, index) => {
@@ -13,6 +13,7 @@ const Slideshow: React.FC<{ imageUrls: string[] }> = ({imageUrls}) => {
                             <div style={{
                                 'backgroundImage': `url(${url})`,
                                 "backgroundPosition": "center",
+                                "backgroundRepeat": "no-repeat",
                                 "height": "40vw"
                             }}>
                             </div>
