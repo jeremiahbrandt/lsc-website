@@ -3,13 +3,15 @@
     justify-content: center;
     justify-items: center;
     grid-row-gap: 10px;
-    padding: 30px 100px;
+    padding: 0 10% 30px 10%;
 }
 
 .name {
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .image {
-    max-width: 100%;
+    width: 100%;
+    max-height: 30vw;
+    object-fit: cover;
 }
