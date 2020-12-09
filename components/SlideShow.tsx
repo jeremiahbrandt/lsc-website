@@ -12,7 +12,8 @@ const Slideshow: React.FC<{ imageUrls: string[] }> = ({imageUrls}) => {
                         <div className="each-slide" key={`slide${index}`}>
                             <div style={{
                                 'backgroundImage': `url(${url})`,
-                                "height": "500px"
+                                "height": "500px",
+                                "backgroundPosition": "center"
                             }}>
                             </div>
                         </div>

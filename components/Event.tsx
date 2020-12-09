@@ -58,11 +58,11 @@ const Event:React.FC<IEvent> = (event: IEvent) => {
         <div className={styles.event}>
             <div className={styles.name}>{event.name}</div>
             <img className={styles.image} src={event.coverImage} alt={`Cover image for the event, ${event.name}.`}/>
-            <div className={styles.timeLocation}>
-                <div className={styles.time}><b>When:</b> {getDay()}, {getTime()}</div>
-                <div className={styles.location}><b>Location:</b> {event.location}</div>
+            <div>
+                <div><b>When:</b> {getDay()}, {getTime()}</div>
+                <div><b>Location:</b> {event.location}</div>
             </div>
-            <BlockContent className={styles.blockContent} blocks={event.content} />
+            <BlockContent blocks={event.content} />
         </div>
     )
 }
