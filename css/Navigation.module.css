@@ -38,7 +38,7 @@
 
     .hamburger {
         display: grid;
-        align-content: space-around;
+        align-content: space-between;
         width: 45px;
         justify-self: right;
         margin-right: 30px;
@@ -46,7 +46,7 @@
     }
 
     .hamburgerLine {
-        height: 7px;
+        height: 4px;
         border-radius: 15px;
         background-color: #1d0e0e;
     }

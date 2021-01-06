@@ -15,7 +15,7 @@ const Slideshow: React.FC<{ imageUrls: string[] }> = ({imageUrls}) => {
                                 "backgroundPosition": "center",
                                 "backgroundRepeat": "no-repeat",
                                 "backgroundSize": "cover",
-                                "height": "25vw"
+                                "height": "30vw"
                             }}>
                             </div>
                         </div>
