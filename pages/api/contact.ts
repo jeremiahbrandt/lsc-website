@@ -3,7 +3,7 @@ import {getEmailCredentials} from "../../lib/api";
 
 export default async function handler(req, res) {
     let {emailSenderAddress, emailSenderPassword} = await getEmailCredentials()
-
+    console.log(req)
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -16,7 +16,7 @@ export default async function handler(req, res) {
         from: emailSenderAddress,
         to: emailSenderAddress,
         subject: 'LSC Website Contact Form',
-        text: 'This is the message...'
+        text: JSON.stringify(req.query)
     };
 
     transporter.sendMail(mailOptions, function(error, info){
