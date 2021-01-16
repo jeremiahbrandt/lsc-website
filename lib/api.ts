@@ -4,6 +4,8 @@ import {IHomePageContent} from "../interfaces/cmsQueries/pages/IHomePageContent"
 import {IAboutPageContent} from "../interfaces/cmsQueries/pages/IAboutPageContent";
 import {IContactPageContent} from "../interfaces/cmsQueries/pages/IContactPageContent";
 import {IEmailCredentials} from "../interfaces/cmsQueries/objects/IEmailCredentials";
+import {IVideosPageContent} from "../interfaces/cmsQueries/pages/IVideosPageContent";
+import videos from "../pages/videos";
 
 export async function getSiteConfig(): Promise<IConfig> {
     return await client.fetch(`
@@ -59,6 +61,17 @@ export async function getContactPageContent(): Promise<IContactPageContent> {
             "daysOfOperation": daysOfOperation[]{
                 dayOfWeek,
                 hoursOfOperation
+            }
+        }
+    `)
+}
+export async function getVideosPageContent(): Promise<IVideosPageContent> {
+    return await client.fetch(`
+        *[_type == "vidoesPage"][0] {
+            videosPageTitle,
+            videos[] {
+                name, 
+                id
             }
         }
     `)

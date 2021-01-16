@@ -7,6 +7,10 @@ export function getNavigationLinks(): INavigationLink[] {
             url: "/"
         },
         {
+            name: "Videos",
+            url: "/videos"
+        },
+        {
             name: "About",
             url: "/about"
         },
