@@ -7,5 +7,7 @@ export interface IConfig {
     emailAddress: string,
     address: IAddress,
     socialMediaLinks: ISocialMediaLink[],
-    logo: string
+    logo: string,
+    emailSenderAddress: string
+    emailSenderPassword: string
 }

@@ -3,6 +3,7 @@ import {IConfig} from "../interfaces/cmsQueries/pages/IConfig";
 import {IHomePageContent} from "../interfaces/cmsQueries/pages/IHomePageContent";
 import {IAboutPageContent} from "../interfaces/cmsQueries/pages/IAboutPageContent";
 import {IContactPageContent} from "../interfaces/cmsQueries/pages/IContactPageContent";
+import {IEmailCredentials} from "../interfaces/cmsQueries/objects/IEmailCredentials";
 
 export async function getSiteConfig(): Promise<IConfig> {
     return await client.fetch(`
@@ -59,6 +60,15 @@ export async function getContactPageContent(): Promise<IContactPageContent> {
                 dayOfWeek,
                 hoursOfOperation
             }
+        }
+    `)
+}
+
+export async function getEmailCredentials(): Promise<IEmailCredentials> {
+    return await client.fetch(`
+        *[_type == "site-config"][0] {
+            emailSenderAddress,
+            emailSenderPassword
         }
     `)
 }

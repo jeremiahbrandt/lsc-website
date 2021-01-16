@@ -1,21 +1,23 @@
 import nodemailer from "nodemailer"
+import {getEmailCredentials} from "../../lib/api";
 
-let transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: process.env.Email_Username,
-        pass: process.env.Email_Password
-    }
-});
+export default async function handler(req, res) {
+    let {emailSenderAddress, emailSenderPassword} = await getEmailCredentials()
 
-let mailOptions = {
-    from: process.env.emailFrom,
-    to: process.env.emailTo,
-    subject: 'LSC Website Contact Form',
-    text: 'This was sent with environment variables'
-};
+    let transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: emailSenderAddress,
+            pass: emailSenderPassword
+        }
+    });
 
-export default function handler(req, res) {
+    let mailOptions = {
+        from: emailSenderAddress,
+        to: emailSenderAddress,
+        subject: 'LSC Website Contact Form',
+        text: 'This is the message...'
+    };
 
     transporter.sendMail(mailOptions, function(error, info){
         if (error) {
@@ -27,5 +29,5 @@ export default function handler(req, res) {
     
     res.statusCode = 200
     res.setHeader('Content-Type', 'application/json')
-    res.end(JSON.stringify({ name: 'John Doe' }))
+    res.redirect("/")
 }
