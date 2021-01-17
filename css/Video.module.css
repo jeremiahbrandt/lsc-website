@@ -1,3 +1,15 @@
 .video {
+    display: grid;
+    width: 100%;
+    justify-items: center;
+}
 
+.title {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.content {
+    width: 80%;
+    height: 550px;
 }

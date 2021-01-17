@@ -18,6 +18,7 @@ export async function getStaticProps() {
 const VideosPage = (props: {content: IVideosPageContent, config: IConfig}) => {
     return (
         <Layout title={props.content.videosPageTitle} config={props.config}>
+            <span className={styles.title}>{props.content.videosPageTitle}</span>
             <div className={styles.page}>
                 <Videos videos={props.content.videos} sectionTitle={props.content.videosPageTitle} />
             </div>

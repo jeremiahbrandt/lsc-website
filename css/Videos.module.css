@@ -1,3 +1,5 @@
 .videos {
-
+    display: grid;
+    justify-items: center;
+    grid-row-gap: 30px;
 }

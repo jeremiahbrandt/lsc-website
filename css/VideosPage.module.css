@@ -3,3 +3,12 @@
     grid-row-gap: 20px;
     padding: 20px 0;
 }
+
+.title {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    grid-area: title;
+}
