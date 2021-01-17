@@ -25,9 +25,8 @@ export default async function handler(req, res) {
         } else {
             console.log('Email sent: ' + info.response);
         }
+        res.statusCode = 200
+        res.setHeader('Content-Type', 'application/json')
+        res.redirect("/")
     });
-    
-    res.statusCode = 200
-    res.setHeader('Content-Type', 'application/json')
-    res.redirect("/")
 }
