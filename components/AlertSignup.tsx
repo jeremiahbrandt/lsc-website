@@ -16,8 +16,8 @@ const AlertSignup = () => {
                     <option value="email">Email</option>
                     <option value="sms">SMS</option>
                 </select>
-                {selection=="email" && <input className={styles.input} type="email" name="signup-email" />}
-                {selection=="sms" && <input className={styles.input} type="tel" name="signup-phone" />}
+                {selection=="email" && <input className={styles.input} type="email" name="email address" />}
+                {selection=="sms" && <input className={styles.input} type="tel" name="phone number" />}
             </div>
             <input className={styles.submit} type="submit" value="Sign Up" />
         </form>
