@@ -3,7 +3,7 @@ import React from "react"
 
 const ContactForm = () => {
     return (
-        <form className={styles.form} action="/api/contact">
+        <form className={styles.form} action="/api/contact-form">
             <div className={styles.title}>Send a Message</div>
             <div className={styles.inputs}>
                 <label className={styles.label} htmlFor="name">Name:</label>

@@ -9,7 +9,7 @@ const AlertSignup = () => {
     }
 
     return (
-        <form className={styles.form} action="/api/contact">
+        <form className={styles.form} action="/api/alert-signup" >
             <div className={styles.title}>Sign Up to Receive Updates</div>
             <div className={styles.inputs}>
                 <select className={styles.select} onChange={handleSelectionChange}>
