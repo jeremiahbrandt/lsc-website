@@ -12,12 +12,12 @@ const AlertSignup = () => {
         <form className={styles.form} action="/api/alert-signup" >
             <div className={styles.title}>Sign Up to Receive Updates</div>
             <div className={styles.inputs}>
-                <select className={styles.select} onChange={handleSelectionChange}>
+                <select className={styles.select} onChange={handleSelectionChange} required={true}>
                     <option value="email">Email</option>
                     <option value="sms">SMS</option>
                 </select>
-                {selection=="email" && <input className={styles.input} type="email" name="email address" />}
-                {selection=="sms" && <input className={styles.input} type="tel" name="phone number" />}
+                {selection=="email" && <input className={styles.input} type="email" name="email address" required={true} />}
+                {selection=="sms" && <input className={styles.input} type="tel" name="phone number" required={true} />}
             </div>
             <input className={styles.submit} type="submit" value="Sign Up" />
         </form>
