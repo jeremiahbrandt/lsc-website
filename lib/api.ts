@@ -66,15 +66,22 @@ export async function getContactPageContent(): Promise<IContactPageContent> {
     `)
 }
 export async function getVideosPageContent(): Promise<IVideosPageContent> {
-    return await client.fetch(`
+    let res = await client.fetch(`
         *[_type == "vidoesPage"][0] {
             videosPageTitle,
             videos[] {
                 name, 
-                id
+                url
             }
         }
     `)
+
+    res.videos.forEach(video => {
+        video.id = video.url.substring(video.url.lastIndexOf('=')+1, video.url.length)
+        delete video.url
+    })
+
+    return res
 }
 
 export async function getEmailCredentials(): Promise<IEmailCredentials> {
