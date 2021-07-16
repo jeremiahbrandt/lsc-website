@@ -1,6 +1,6 @@
 .footer {
-    background-color: #311e1e;
-    color: #bbbaba;
+    background-color: #000000;
+    color: #fefefe;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 50px;
@@ -69,7 +69,8 @@
 
 .copyright {
     align-items: center;
-    background-color: #1d0e0e;
+    background-color: #e2e2e3;
+    color: #000000;
     display: grid;
     text-align: center;
     width: 100%;
