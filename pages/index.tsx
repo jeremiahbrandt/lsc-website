@@ -19,7 +19,6 @@ export async function getStaticProps() {
 }
 
 const IndexPage = (props: {content: IHomePageContent, config: IConfig}) => {
-    console.log(props.content.welcomeVideo.name)
     return (
         <Layout title={"Home"} config={props.config}>
             <Video name={props.content.welcomeVideo.video.name} id={props.content.welcomeVideo.video.id} />

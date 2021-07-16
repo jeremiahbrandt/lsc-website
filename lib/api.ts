@@ -5,8 +5,6 @@ import { IAboutPageContent } from "../interfaces/cmsQueries/pages/IAboutPageCont
 import { IContactPageContent } from "../interfaces/cmsQueries/pages/IContactPageContent";
 import { IEmailCredentials } from "../interfaces/cmsQueries/objects/IEmailCredentials";
 import { IVideosPageContent } from "../interfaces/cmsQueries/pages/IVideosPageContent";
-import videos from "../pages/videos";
-import { CLIENT_RENEG_LIMIT } from "tls";
 
 export async function getSiteConfig(): Promise<IConfig> {
   return await client.fetch(`
@@ -46,7 +44,6 @@ export async function getHomePageContent(): Promise<IHomePageContent> {
         }
     `);
 
-        console.log(res.welcomeVideo.video.url)
   res.welcomeVideo.video.id = getVideoId('https://youtu.be/FZUcpVmEHuk');
   delete res.welcomeVideo.video.url;
 
