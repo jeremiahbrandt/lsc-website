@@ -22,8 +22,7 @@
 }
 
 .link:hover {
-    background-color: #3d3d3d;
-    color: #dedcdc;
+    background-color: #cf202e;
 }
 
 
@@ -33,7 +32,7 @@
         grid-auto-flow: column;
         grid-template-columns: 1fr;
         grid-template-rows: 60px auto;
-        background-color: #3d3d3d;
+        background-color: #404041;
     }
 
     .hamburger {
@@ -58,7 +57,7 @@
         height: 0px;
         overflow: hidden;
         transition: height 0.4s ease-out;
-        background-color: #5a5656;
+        background-color: #404041;
     }
 
     .navShown {

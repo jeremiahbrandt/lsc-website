@@ -23,6 +23,7 @@
     .wrapper {
         height: unset;
         padding: 0;
+        background-color: #ffffff;
     }
 
     .header {

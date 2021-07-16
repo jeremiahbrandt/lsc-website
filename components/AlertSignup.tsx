@@ -14,7 +14,7 @@ const AlertSignup = () => {
             <div className={styles.inputs}>
                 <select className={styles.select} onChange={handleSelectionChange} required={true}>
                     <option value="email">Email</option>
-                    <option value="sms">SMS</option>
+                    <option value="sms">Text</option>
                 </select>
                 {selection=="email" && <input className={styles.input} type="email" name="email address" required={true} />}
                 {selection=="sms" && <input className={styles.input} type="tel" name="phone number" required={true} />}
