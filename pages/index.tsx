@@ -20,7 +20,7 @@ export async function getStaticProps() {
 
 const IndexPage = (props: {content: IHomePageContent, config: IConfig}) => {
     return (
-        <h1>Coming Soon</h1>
+        <h1>Coming Soon.</h1>
     )
 }
 
