@@ -30,12 +30,12 @@ export async function getStaticProps({ params }) {
     },
   };
 }
-
+ 
 export async function getStaticPaths() {
   const paths = (await getHomePageContent()).events.map((event) => {
     return {
       params: {
-        slug: event.name.replaceAll(" ", "-").toLocaleLowerCase(),
+        slug: event.name.replaceAll(/\s+/g, '-').toLowerCase(),
       },
     };
   });
