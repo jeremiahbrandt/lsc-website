@@ -2,6 +2,7 @@ import {IEvent} from "../interfaces/cmsQueries/objects/IEvent";
 import styles from "../css/Event.module.css"
 import React from "react";
 import BlockContent from "@sanity/block-content-to-react"
+import Link from "next/link";
 
 const MONTHS: string[] = [
     "Jan",
@@ -65,7 +66,7 @@ const Event:React.FC<IEvent> = (event: IEvent) => {
 
     return (
         <div className={styles.event}>
-            <div className={styles.name}>{event.name}</div>
+            <Link href='/posts/chapel'><div className={styles.name}>{event.name}</div></Link>
             <img className={styles.image} src={event.coverImage} alt={`Cover image for the event, ${event.name}.`}/>
             <div>
                 <div><b>When:</b> {getDay()}, {getTime()}</div>

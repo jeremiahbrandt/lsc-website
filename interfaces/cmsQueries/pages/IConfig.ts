@@ -1,5 +1,6 @@
 import {ISocialMediaLink} from "../objects/ISocialMediaLink";
 import {IAddress} from "../objects/IAddress";
+import { IOg } from "../../IOg";
 
 export interface IConfig {
     siteTitle: string,
@@ -9,5 +10,6 @@ export interface IConfig {
     socialMediaLinks: ISocialMediaLink[],
     logo: string,
     emailSenderAddress: string
-    emailSenderPassword: string
+    emailSenderPassword: string,
+    og? : IOg
 }

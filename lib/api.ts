@@ -5,6 +5,7 @@ import { IAboutPageContent } from "../interfaces/cmsQueries/pages/IAboutPageCont
 import { IContactPageContent } from "../interfaces/cmsQueries/pages/IContactPageContent";
 import { IEmailCredentials } from "../interfaces/cmsQueries/objects/IEmailCredentials";
 import { IVideosPageContent } from "../interfaces/cmsQueries/pages/IVideosPageContent";
+import { IEvent } from "../interfaces/cmsQueries/objects/IEvent";
 
 export async function getSiteConfig(): Promise<IConfig> {
   return await client.fetch(`
@@ -44,10 +45,30 @@ export async function getHomePageContent(): Promise<IHomePageContent> {
         }
     `);
 
-  res.welcomeVideo.video.id = getVideoId('https://youtu.be/FZUcpVmEHuk');
+  res.welcomeVideo.video.id = getVideoId("https://youtu.be/FZUcpVmEHuk");
   delete res.welcomeVideo.video.url;
 
   return res;
+}
+
+export async function getEvent(name: string): Promise<IEvent> {
+  const content = await client.fetch(`
+  *[_type == "homePage"][0] {
+    "events": events[]{
+        name,
+        startTime,
+        endTime,
+        location,
+        content,
+        "coverImage": coverImage.asset->url
+    }
+}`);
+  const event = content.events.find((e) => e.name.replaceAll(" ", "-").toLowerCase() === name);
+  if (event === undefined) {
+    throw new Error(`Event ${name} not found`);
+  } else {
+    return event;
+  }
 }
 
 export async function getAboutPageContent(): Promise<IAboutPageContent> {
@@ -104,5 +125,8 @@ export async function getEmailCredentials(): Promise<IEmailCredentials> {
 }
 
 function getVideoId(url: string): string {
-  return url.substring((url.lastIndexOf("=") + 1) || (url.lastIndexOf("/") + 1), url.length);
+  return url.substring(
+    (url.lastIndexOf("=") + 1) || (url.lastIndexOf("/") + 1),
+    url.length,
+  );
 }
