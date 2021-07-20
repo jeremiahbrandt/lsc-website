@@ -63,7 +63,7 @@ export async function getEvent(name: string): Promise<IEvent> {
         "coverImage": coverImage.asset->url
     }
 }`);
-  const event = content.events.find((e) => e.name.replaceAll(" ", "-").toLowerCase() === name);
+  const event = content.events.find((e) => e.name.replace(/\s+/g, '-').toLowerCase() === name);
   if (event === undefined) {
     throw new Error(`Event ${name} not found`);
   } else {

@@ -35,7 +35,7 @@ export async function getStaticPaths() {
   const paths = (await getHomePageContent()).events.map((event) => {
     return {
       params: {
-        slug: event.name.replaceAll(/\s+/g, '-').toLowerCase(),
+        slug: event.name.replace(/\s+/g, '-').toLowerCase(),
       },
     };
   });
