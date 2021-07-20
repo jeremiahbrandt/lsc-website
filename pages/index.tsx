@@ -20,11 +20,7 @@ export async function getStaticProps() {
 
 const IndexPage = (props: {content: IHomePageContent, config: IConfig}) => {
     return (
-        <Layout title={"Home"} config={props.config}>
-            <Video name={props.content.welcomeVideo.video.name} id={props.content.welcomeVideo.video.id} />
-            <Slideshow imageUrls={props.content.slideshowImages} />
-            <Events events={props.content.events} sectionTitle={props.content.eventsSectionTitle} />
-        </Layout>
+        <h1>Coming Soon</h1>
     )
 }
 
