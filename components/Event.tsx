@@ -69,7 +69,7 @@ const Event: React.FC<IEvent> = (event: IEvent) => {
 
   return (
     <div className={styles.event}>
-      <Link href={`/posts/event.name.replace(/\s+/g, '-').toLowerCase()`}>
+      <Link href={`/posts/${event.name.replace(/\s+/g, '-').toLowerCase()}`}>
         <div className={styles.name}>{event.name}</div>
       </Link>
       <img
