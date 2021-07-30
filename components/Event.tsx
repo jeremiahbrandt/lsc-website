@@ -3,6 +3,7 @@ import styles from "../css/Event.module.css";
 import React from "react";
 import BlockContent from "@sanity/block-content-to-react";
 import Link from "next/link";
+import Script from "next/head";
 
 const MONTHS: string[] = [
   "Jan",
@@ -67,9 +68,11 @@ const Event: React.FC<IEvent> = (event: IEvent) => {
     return day + ", " + month + " " + date.getDate();
   };
 
+  const path = `/posts/${event.name.replace(/\s+/g, "-").toLowerCase()}`;
+
   return (
     <div className={styles.event}>
-      <Link href={`/posts/${event.name.replace(/\s+/g, '-').toLowerCase()}`}>
+      <Link href={path}>
         <div className={styles.name}>{event.name}</div>
       </Link>
       <img
@@ -86,6 +89,13 @@ const Event: React.FC<IEvent> = (event: IEvent) => {
         </div>
       </div>
       <BlockContent blocks={event.content} />
+      <a
+        href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.origin}${path}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Share on Facebook
+      </a>
     </div>
   );
 };
