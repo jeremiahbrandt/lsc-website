@@ -17,7 +17,7 @@ export async function getStaticProps({ params }) {
   const config = await getSiteConfig();
   config.og = {
     title: event.name,
-    description: 'Test description',
+    description: event.description,
     image: event.coverImage,
     type: 'website',
     url: `https://lsc-website.vercel.app/posts/${params.slug}`

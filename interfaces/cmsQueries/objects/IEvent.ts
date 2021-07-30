@@ -4,5 +4,6 @@ export interface IEvent {
     endTime: number,
     location: string,
     coverImage: string,
-    content: object[]
+    content: object[],
+    description: string,
 }
