@@ -10,6 +10,10 @@
     font-size: 25px;
 }
 
+.name::hover {
+    color: #fff;
+}
+
 .image {
     width: 100%;
     max-height: 30vw;
