@@ -17,6 +17,7 @@
     "nodemailer": "^6.4.14",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-share": "^4.4.0",
     "react-slideshow-image": "^3.3.0"
   },
   "devDependencies": {

@@ -19,3 +19,19 @@
     max-height: 30vw;
     object-fit: cover;
 }
+
+.eventHeader {
+    display: grid;
+    grid-template-columns: auto 36px;
+    width: 100%;
+    text-align: center;
+}
+
+.timeLocation {
+    padding-left: 36px;
+}
+
+.shareButton {
+    width: 36px;
+    height: 36px;
+}
