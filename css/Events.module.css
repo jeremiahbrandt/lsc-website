@@ -20,3 +20,9 @@
     grid-row-gap: 20px;
     justify-content: center;
 }
+
+.bottomBorder {
+    width: 100%;
+    max-width: 80vw;
+    border-bottom: 1px solid #999;
+}

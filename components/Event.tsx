@@ -72,22 +72,22 @@ const Event: React.FC<IEvent> = (event: IEvent) => {
 
   return (
     <div className={styles.event}>
-      <Link href={path}>
-        <div className={styles.name}>{event.name}</div>
-      </Link>
       <img
         className={styles.image}
         src={event.coverImage}
         alt={`Cover image for the event, ${event.name}.`}
       />
       <div className={styles.eventHeader}>
+        <Link href={path}>
+          <div className={styles.name}>{event.name}</div>
+        </Link>
         <div className={styles.timeLocation}>
-          <div>
+          {/* <div>
             <b>When:</b> {getDay()}, {getTime()}
           </div>
           <div>
             <b>Location:</b> {event.location}
-          </div>
+          </div> */}
         </div>
         <FacebookShareButton
           url={`https://ucm-lsc.org${path}`}
@@ -126,7 +126,9 @@ const Event: React.FC<IEvent> = (event: IEvent) => {
           </svg>
         </FacebookShareButton>
       </div>
-      <BlockContent blocks={event.content} />
+      <div className={styles.defaultCursor}>
+        <BlockContent blocks={event.content} />
+      </div>
     </div>
   );
 };

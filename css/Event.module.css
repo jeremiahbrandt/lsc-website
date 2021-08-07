@@ -2,29 +2,31 @@
     display: grid;
     justify-content: center;
     justify-items: center;
-    grid-row-gap: 10px;
-    padding: 0 10% 30px 10%;
+    padding: 0 10% 0 10%;
 }
 
 .name {
-    font-size: 25px;
+    font-size: 30px;
+    font-weight: 500;
+    color: #000000;
+    cursor: pointer;
 }
 
-.name::hover {
-    color: #fff;
+.name:hover {
+    color: #cf202e;
 }
 
 .image {
-    width: 100%;
+    width: 80vw;
     max-height: 30vw;
     object-fit: cover;
 }
 
 .eventHeader {
+    margin-top: 16px;
     display: grid;
-    grid-template-columns: auto 36px;
+    grid-template-columns: auto auto 36px;
     width: 100%;
-    text-align: center;
 }
 
 .timeLocation {
@@ -34,4 +36,8 @@
 .shareButton {
     width: 36px;
     height: 36px;
+}
+
+.defaultCursor {
+    cursor: default;
 }
