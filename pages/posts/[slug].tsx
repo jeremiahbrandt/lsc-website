@@ -20,7 +20,7 @@ export async function getStaticProps({ params }) {
     description: event.description,
     image: event.coverImage,
     type: 'website',
-    url: `https://lsc-website.vercel.app/posts/${params.slug}`
+    url: `https://www.ucm-lsc.org/posts/${params.slug}`
   }
 
   return {
