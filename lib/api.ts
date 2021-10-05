@@ -36,7 +36,8 @@ export async function getHomePageContent(): Promise<IHomePageContent> {
                 "coverImage": coverImage.asset->url
             },
             "slideshowImages": slideshowImages[].asset->url,
-            "welcomeVideo": welcomeVideo{
+            "welcomeVideo": welcomeVideo {
+                enabled,
                 "video": video {
                     name,
                   url
@@ -45,7 +46,7 @@ export async function getHomePageContent(): Promise<IHomePageContent> {
         }
     `);
 
-  res.welcomeVideo.video.id = getVideoId("https://youtu.be/FZUcpVmEHuk");
+  res.welcomeVideo.video.id = getVideoId(res.welcomeVideo.video.url);
   delete res.welcomeVideo.video.url;
 
   return res;

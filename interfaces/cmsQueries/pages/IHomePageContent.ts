@@ -5,6 +5,7 @@ export interface IHomePageContent {
   events: IEvent[];
   slideshowImages: string[];
   welcomeVideo: {
+    enabled: boolean;
     video: {
       id: string;
       name: string;
