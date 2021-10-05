@@ -32,13 +32,25 @@ export async function getStaticProps({ params }) {
 }
  
 export async function getStaticPaths() {
-  const paths = (await getHomePageContent()).events.map((event) => {
-    return {
+  const paths = []
+
+  const homePageContent = await getHomePageContent();
+
+  homePageContent.firstSection.articles.forEach(article => {
+    paths.push({
       params: {
-        slug: event.name.replace(/\s+/g, '-').toLowerCase(),
-      },
-    };
-  });
+        slug: article.slug.replace(/\s+/g, '-').toLowerCase()
+      }
+    })
+  })
+
+  homePageContent.secondSection.articles.forEach(article => {
+    paths.push({
+      params: {
+        slug: article.slug.replace(/\s+/g, '-').toLowerCase()
+      }
+    })
+  })
 
   return {
     paths,

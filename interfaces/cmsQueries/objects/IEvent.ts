@@ -6,4 +6,5 @@ export interface IEvent {
     coverImage: string,
     content: object[],
     description: string,
+    slug: string
 }

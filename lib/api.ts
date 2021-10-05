@@ -6,6 +6,7 @@ import { IContactPageContent } from "../interfaces/cmsQueries/pages/IContactPage
 import { IEmailCredentials } from "../interfaces/cmsQueries/objects/IEmailCredentials";
 import { IVideosPageContent } from "../interfaces/cmsQueries/pages/IVideosPageContent";
 import { IEvent } from "../interfaces/cmsQueries/objects/IEvent";
+import groq from "groq";
 
 export async function getSiteConfig(): Promise<IConfig> {
   return await client.fetch(`
@@ -26,14 +27,29 @@ export async function getSiteConfig(): Promise<IConfig> {
 export async function getHomePageContent(): Promise<IHomePageContent> {
   let res = await client.fetch(`
         *[_type == "homePage"][0] {
-            eventsSectionTitle,
-            "events": events[]{
+            firstSection {
+              name,
+              "articles": articles[] {
                 name,
+                slug,
                 startTime,
                 endTime,
                 location,
                 content,
                 "coverImage": coverImage.asset->url
+              }
+            },
+            secondSection {
+              name,
+              "articles": articles[] {
+                name,
+                slug,
+                startTime,
+                endTime,
+                location,
+                content,
+                "coverImage": coverImage.asset->url
+              }
             },
             "slideshowImages": slideshowImages[].asset->url,
             "welcomeVideo": welcomeVideo {
@@ -52,27 +68,42 @@ export async function getHomePageContent(): Promise<IHomePageContent> {
   return res;
 }
 
-export async function getEvent(name: string): Promise<IEvent> {
-  const content = await client.fetch(`
-  *[_type == "homePage"][0] {
-    "events": events[]{
-        name,
-        startTime,
-        endTime,
-        location,
-        content,
-        "coverImage": coverImage.asset->url,
-        description
-    }
-}`);
-  const event = content.events.find((e) =>
-    e.name.replace(/\s+/g, "-").toLowerCase() === name
-  );
-  if (event === undefined) {
-    throw new Error(`Event ${name} not found`);
-  } else {
-    return event;
+export async function getEvent(slug: string): Promise<IEvent> {
+  const content = await client.fetch(groq`
+  *[_type == "homePage"] {
+  	"article": 
+      coalesce(
+      	firstSection.articles[slug == $slug] {
+          name,
+          slug,
+          startTime,
+          endTime,
+          location,
+          content,
+          "coverImage": coverImage.asset->url,
+          description
+        }[0],
+        secondSection.articles[slug == $slug] {
+          name,
+          slug,
+          startTime,
+          endTime,
+          location,
+          content,
+          "coverImage": coverImage.asset->url,
+          description
+        }[0]
+			)
+}[0]
+`, {
+    slug: slug
+  });
+
+  if(content === null || content === undefined) {
+    throw new Error("Event not found");
   }
+
+  return content.article;
 }
 
 export async function getAboutPageContent(): Promise<IAboutPageContent> {

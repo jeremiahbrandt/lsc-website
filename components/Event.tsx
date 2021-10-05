@@ -68,7 +68,7 @@ const Event: React.FC<IEvent> = (event: IEvent) => {
     return day + ", " + month + " " + date.getDate();
   };
 
-  const path = `/posts/${event.name.replace(/\s+/g, "-").toLowerCase()}`;
+  const path = `/posts/${event.slug.replace(/\s+/g, "-").toLowerCase()}`;
 
   return (
     <div className={styles.event}>

@@ -23,7 +23,8 @@ const IndexPage = (props: {content: IHomePageContent, config: IConfig}) => {
         <Layout title={"Home"} config={props.config}>
             { props.content.welcomeVideo.enabled && <Video name={props.content.welcomeVideo.video.name} id={props.content.welcomeVideo.video.id} /> }
             <Slideshow imageUrls={props.content.slideshowImages} />
-            <Events events={props.content.events} sectionTitle={props.content.eventsSectionTitle} />
+            <Events events={props.content.firstSection.articles} sectionTitle={props.content.firstSection.name} />
+            <Events events={props.content.secondSection.articles} sectionTitle={props.content.secondSection.name} />
         </Layout>
     )
 }
