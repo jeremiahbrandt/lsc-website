@@ -32,13 +32,13 @@ export async function getStaticProps({ params }) {
 }
  
 export async function getStaticPaths() {
-  const paths = (await getHomePageContent()).events.map((event) => {
+  const paths = (await getHomePageContent()).events?.map((event) => {
     return {
       params: {
         slug: event.name.replace(/\s+/g, '-').toLowerCase(),
       },
     };
-  });
+  }) ?? [];
 
   return {
     paths,
