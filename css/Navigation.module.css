@@ -7,7 +7,7 @@
     display: grid;
     grid-auto-flow: column;
     grid-template-rows: 100%;
-    height: 60px;
+    height: 100px;
 }
 
 .link {
