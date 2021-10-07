@@ -26,7 +26,7 @@ const IndexPage = (props: {content: IHomePageContent, config: IConfig}) => {
         //     <Events events={props.content.events} sectionTitle={props.content.eventsSectionTitle} />
         // </Layout>
         <div style={{display: 'grid', justifyContent: 'center', alignContent: 'center', backgroundColor: '#000000', color: '#e2e2e3', height: '100vh'}}>
-            <h1 style={{fontSize: 'xxx-large'}}>Coming Soon</h1>
+            <h1 style={{fontSize: 'xxx-large'}}>Under Maintenance</h1>
         </div>
     )
 }
