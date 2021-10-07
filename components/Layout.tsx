@@ -8,7 +8,7 @@ import styles from "../css/Layout.module.css"
 const Layout:React.FC<{title: string, config: IConfig}> = ({children, title,config}) => {
     return (
         <div className={"layout"}>
-            <Header logo={config.logo} />
+            <Header logo={config.logo} title={config.siteTitle} />
             <Head>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <title>Lutheran Student Center | {title}</title>

@@ -13,10 +13,19 @@
     padding: 0 50px;
 }
 
-.img {
+.logo {
     grid-area: logo;
+    display: grid;
+    grid-template-columns: 60px auto;
+}
+
+.img {
     max-height: 60px;
     max-width: 1000px;
+}
+
+.title {
+    align-self: center;
 }
 
 @media screen and (max-width: 750px) {
