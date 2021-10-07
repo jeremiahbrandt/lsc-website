@@ -11,8 +11,22 @@ export function getNavigationLinks(): INavigationLink[] {
             url: "/videos"
         },
         {
-            name: "About",
-            url: "/about"
+            name: "About Us",
+            url: "/about",
+            dropdown: [
+                {
+                    name: "Our Beliefs",
+                    url: "/about#beliefs"
+                },
+                {
+                    name: "History",
+                    url: "/about#history"
+                },
+                {
+                    name: "Staff",
+                    url: "/about#staff"
+                },
+            ]
         },
         {
             name: "Contact",

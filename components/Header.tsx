@@ -2,6 +2,7 @@ import Navigation from "./Navigation";
 import Link from "next/link";
 import React, { FC } from "react"
 import styles from "../css/Header.module.css"
+import { getNavigationLinks } from "../lib/navigation";
 
 export type HeaderProps = {
     logo: string
@@ -9,6 +10,8 @@ export type HeaderProps = {
 }
 
 const Header: FC<HeaderProps> = ({ logo, title }: HeaderProps) => {
+    const navigationLinks = getNavigationLinks()
+
     return (
         <div className={styles.wrapper}>
             <header className={styles.header}>
@@ -18,7 +21,7 @@ const Header: FC<HeaderProps> = ({ logo, title }: HeaderProps) => {
                         <div className={styles.title}>{title}</div>
                     </div>
                 </Link>
-                <Navigation />
+                <Navigation links={navigationLinks} />
             </header>
         </div>
     )

@@ -1,4 +1,5 @@
 export interface INavigationLink {
     name: string,
-    url: string
+    url: string,
+    dropdown?: INavigationLink[]
 }

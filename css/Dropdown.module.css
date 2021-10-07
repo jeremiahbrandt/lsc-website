@@ -1,0 +1,25 @@
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdownContent {
+    display: grid;
+    position: absolute;
+    min-width: 100%;
+    z-index: 2;
+}
+
+.link {
+    display: grid;
+    align-items: center;
+    height: 50px;
+    background-color: #404041;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+}
+
+.link:hover {
+    background-color: #cf202e;
+}

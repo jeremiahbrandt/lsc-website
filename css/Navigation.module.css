@@ -10,22 +10,6 @@
     height: 100px;
 }
 
-.link {
-    align-items: center;
-    color: #ffffff;
-    display: grid;
-    font-size: 18px;
-    height: 100%;
-    padding: 0 15px;
-    text-align: center;
-    text-decoration: none;
-}
-
-.link:hover {
-    background-color: #cf202e;
-}
-
-
 @media screen and (max-width: 750px) {
     .wrapper {
         display: grid;
@@ -34,7 +18,6 @@
         grid-template-rows: 60px auto;
         background-color: #404041;
     }
-
     .hamburger {
         display: grid;
         align-content: space-between;
@@ -43,23 +26,19 @@
         margin-right: 30px;
         padding: 20px 0;
     }
-
     .hamburgerLine {
         height: 4px;
         border-radius: 15px;
         background-color: #1d0e0e;
     }
-
     .nav {
         grid-template-columns: unset;
         grid-template-rows: unset;
         grid-auto-flow: row;
         height: 0px;
-        overflow: hidden;
         transition: height 0.4s ease-out;
         background-color: #404041;
     }
-
     .navShown {
         height: 500px;
     }

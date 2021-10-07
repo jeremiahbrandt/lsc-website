@@ -1,11 +1,14 @@
 import Link from 'next/link'
-import {getNavigationLinks} from "../lib/navigation"
 import styles from "../css/Navigation.module.css"
-import React, {useState} from "react";
+import React, { useState } from "react";
+import { INavigationLink } from '../interfaces/INavigationLink';
+import { NavigationLink } from './NavigationLink';
 
-const Navigation = () => {
-    const links = getNavigationLinks()
+export type NavigationProps = {
+    links: INavigationLink[]
+}
 
+const Navigation = ({ links }: NavigationProps) => {
     const [mobileLinksShown, setMobileLinksShown] = useState<boolean>(false);
 
     const toggleMobileLinksShown = () => {
@@ -21,7 +24,16 @@ const Navigation = () => {
             </div>
             <nav className={`${styles.nav} ${mobileLinksShown ? styles.navShown : ""}`}>
                 {
-                    links.map((link, index) => <Link key={`navLink${index}`} href={link.url}><a className={styles.link}>{link.name}</a></Link>)
+                    links.map((link, index) => {
+                        return (
+                            <NavigationLink
+                                key={`navLink${index}`}
+                                name={link.name}
+                                url={link.url}
+                                dropdown={link.dropdown}
+                            />
+                        )
+                    })
                 }
             </nav>
         </div>
