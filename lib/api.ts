@@ -10,7 +10,7 @@ import groq from "groq";
 
 export async function getSiteConfig(): Promise<IConfig> {
   return await client.fetch(`
-        *[_type=="site-config"][0] {
+        *[_type=="site-config"][1] {
           siteTitle,
           "logo": logo.asset->url,
           phoneNumber,
