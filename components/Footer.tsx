@@ -4,8 +4,6 @@ import styles from "../css/Footer.module.css"
 import AlertSignup from "./AlertSignup";
 
 const Footer:FC<IConfig> = (config) => {
-
-
     return (
         <footer className={styles.footer}>
             <div className={styles.top}>
