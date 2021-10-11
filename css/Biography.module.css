@@ -4,18 +4,17 @@
     justify-items: center;
     padding: 30px 100px;
 }
-.biography:nth-of-type(odd) {
+
+.biographyLeft {
     grid-template-columns: 2fr 5fr;
-    grid-template-areas:
-            "title title"
-            "picture paragraph";
+    grid-template-areas: "title title" "picture paragraph";
 }
-.biography:nth-of-type(even) {
+
+.biographyRight {
     grid-template-columns: 5fr 2fr;
-    grid-template-areas:
-            "title title"
-            "paragraph picture";
+    grid-template-areas: "title title" "paragraph picture";
 }
+
 .img {
     grid-area: picture;
     display: grid;
@@ -23,6 +22,7 @@
     border-radius: 20px;
     max-width: 100%;
 }
+
 .title {
     grid-area: title;
     font-size: 20px;
@@ -40,18 +40,14 @@
         justify-items: center;
         padding: 0 30px;
     }
-
-    .biography:nth-of-type(odd) {
+    .biographyLeft {
         grid-template-columns: 1fr;
         grid-template-areas: "title" "picture" "paragraph";
     }
-
-    .biography:nth-of-type(even) {
+    .biographyRight {
         grid-template-columns: 1fr;
         grid-template-areas: "title" "picture" "paragraph";
-
     }
-
     .img {
         width: 100%;
     }

@@ -9,6 +9,8 @@ export type BiographyProps = {
 }
 
 export default function BiographyProps({ aboutPageTitle, biographySections }: BiographyProps) {
+    let biographyCount = 0
+
     return (
         <div>
             <div className={styles.title}>
@@ -23,7 +25,7 @@ export default function BiographyProps({ aboutPageTitle, biographySections }: Bi
                                     {biographySection.title}
                                 </div>
                                 <div className={styles.biographies} id={biographySection.title.replace(/\s+/g, "-").toLowerCase()}>
-                                    {biographySection.biographies.map((biography, index) => <Biography key={index} {...biography} />)}
+                                    {biographySection.biographies.map((biography, index) => <Biography key={index} imageAlignment={biographyCount++ % 2 === 0 ? 'left' : 'right'} {...biography} />)}
                                 </div>
                             </div>
                         )
