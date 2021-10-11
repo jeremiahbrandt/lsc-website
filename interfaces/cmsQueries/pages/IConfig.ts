@@ -1,6 +1,7 @@
 import {ISocialMediaLink} from "../objects/ISocialMediaLink";
 import {IAddress} from "../objects/IAddress";
 import { IOg } from "../../IOg";
+import { INavigationLink } from "../../INavigationLink";
 
 export interface IConfig {
     siteTitle: string,
@@ -12,4 +13,5 @@ export interface IConfig {
     emailSenderAddress: string
     emailSenderPassword: string,
     og? : IOg
+    navigationLinks: INavigationLink[]
 }

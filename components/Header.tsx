@@ -3,15 +3,15 @@ import Link from "next/link";
 import React, { FC } from "react"
 import styles from "../css/Header.module.css"
 import { getNavigationLinks } from "../lib/navigation";
+import { INavigationLink } from "../interfaces/INavigationLink";
 
 export type HeaderProps = {
     logo: string
     title: string
+    links: INavigationLink[]
 }
 
-const Header: FC<HeaderProps> = ({ logo, title }: HeaderProps) => {
-    const navigationLinks = getNavigationLinks()
-
+const Header: FC<HeaderProps> = ({ logo, title, links }: HeaderProps) => {
     return (
         <div className={styles.wrapper}>
             <header className={styles.header}>
@@ -21,7 +21,7 @@ const Header: FC<HeaderProps> = ({ logo, title }: HeaderProps) => {
                         <div className={styles.title}>{title}</div>
                     </div>
                 </Link>
-                <Navigation links={navigationLinks} />
+                <Navigation links={links} />
             </header>
         </div>
     )

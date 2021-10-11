@@ -9,19 +9,31 @@ import { IEvent } from "../interfaces/cmsQueries/objects/IEvent";
 import groq from "groq";
 
 export async function getSiteConfig(): Promise<IConfig> {
-  return await client.fetch(`
+  const config = await client.fetch(`
         *[_type=="site-config"][0] {
           siteTitle,
           "logo": logo.asset->url,
           phoneNumber,
           emailAddress,
           address,
+          navigationLinks,
           "socialMediaLinks": socialMediaLinks[] {
             url,
             "image": image.asset->url
           },
         }
-    `);
+    `)
+
+  const links = config.navigationLinks
+  config.navigationLinks = []
+
+  if (links.home) config.navigationLinks.push({ name: "Home", url: "/" })
+  if (links.about) config.navigationLinks.push({ name: "About", url: "/about" })
+  if (links.contact) config.navigationLinks.push({ name: "Contact", url: "/contact" })
+  if (links.calendar) config.navigationLinks.push({ name: "Calendar", url: "/calendar" })
+  if (links.videos) config.navigationLinks.push({ name: "Videos", url: "/videos" })
+
+  return config
 }
 
 export async function getHomePageContent(): Promise<IHomePageContent> {
@@ -99,7 +111,7 @@ export async function getEvent(slug: string): Promise<IEvent> {
     slug: slug
   });
 
-  if(content === null || content === undefined) {
+  if (content === null || content === undefined) {
     throw new Error("Event not found");
   }
 
