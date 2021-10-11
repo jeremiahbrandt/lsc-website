@@ -2,5 +2,8 @@ import {IBiography} from "../objects/IBiography";
 
 export interface IAboutPageContent {
     aboutPageTitle: string,
-    biographies: IBiography[]
+    biographySections: {
+        title,
+        biographies: IBiography[]
+    }
 }

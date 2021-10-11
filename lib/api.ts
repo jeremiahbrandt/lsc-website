@@ -17,6 +17,11 @@ export async function getSiteConfig(): Promise<IConfig> {
           emailAddress,
           address,
           navigationLinks,
+          "aboutPageBiographies": *[_type == "aboutPage"][0] {
+            biographySections[] {
+              title
+            }
+          },
           "socialMediaLinks": socialMediaLinks[] {
             url,
             "image": image.asset->url
@@ -33,20 +38,12 @@ export async function getSiteConfig(): Promise<IConfig> {
   if (links.about) config.navigationLinks.push({
     name: "About",
     url: "/about",
-    dropdown: [
-      {
-        name: "Our Beliefs",
-        url: "/about#beliefs"
-      },
-      {
-        name: "History",
-        url: "/about#history"
-      },
-      {
-        name: "Staff",
-        url: "/about#staff"
-      },
-    ]
+    dropdown: config.aboutPageBiographies.biographySections.map(section => {
+      return {
+        name: section.title,
+        url: `/about#${section.title.replace(/\s+/g, "-").toLowerCase()}`
+      }
+    }),
   })
   if (links.contact) config.navigationLinks.push({ name: "Contact", url: "/contact" })
 
@@ -137,16 +134,19 @@ export async function getEvent(slug: string): Promise<IEvent> {
 
 export async function getAboutPageContent(): Promise<IAboutPageContent> {
   return await client.fetch(`
-        *[_type == "aboutPage"][0] {
-            aboutPageTitle,
-            "biographies": biographies[]{
-                name,
-                position,
-                "image": image.asset->url,
-                blockContent
-            }
-        }
-    `);
+  *[_type=="aboutPage"][0] {
+    aboutPageTitle,
+    biographySections[] {
+      title,
+      biographies[] {
+        name,
+        position,
+        "image": image.asset->url,
+        blockContent
+      }
+    }
+  }
+`);
 }
 
 export async function getContactPageContent(): Promise<IContactPageContent> {

@@ -17,7 +17,7 @@ export async function getStaticProps() {
 const aboutPage = (props: {content: IAboutPageContent, config: IConfig}) => {
     return (
         <Layout title={"about"} config={props.config}>
-            <Biographies biographies={props.content.biographies} aboutPageTitle={props.content.aboutPageTitle}/>
+            <Biographies biographySections={props.content.biographySections} aboutPageTitle={props.content.aboutPageTitle}/>
         </Layout>
     )
 }

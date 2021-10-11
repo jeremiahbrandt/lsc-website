@@ -1,9 +1,14 @@
 import React from "react";
-import {IBiography} from "../interfaces/cmsQueries/objects/IBiography";
+import { IBiography } from "../interfaces/cmsQueries/objects/IBiography";
 import Biography from "./Biography";
 import styles from "../css/Biographies.module.css"
 
-const Biographies: React.FC<{biographies:  IBiography[], aboutPageTitle: string}> = ({biographies,aboutPageTitle}) => {
+export type BiographyProps = {
+    biographySections: { biographies: IBiography[], title }[],
+    aboutPageTitle: string
+}
+
+export default function BiographyProps({ aboutPageTitle, biographySections }: BiographyProps) {
     return (
         <div>
             <div className={styles.title}>
@@ -11,11 +16,20 @@ const Biographies: React.FC<{biographies:  IBiography[], aboutPageTitle: string}
             </div>
             <div>
                 {
-                    biographies.map((biography, index) => <Biography key={`biography${index}`} {...biography} />)
+                    biographySections.map((biographySection, index) => {
+                        return (
+                            <div key={index}>
+                                <div className={styles.title}>
+                                    {biographySection.title}
+                                </div>
+                                <div className={styles.biographies} id={biographySection.title.replace(/\s+/g, "-").toLowerCase()}>
+                                    {biographySection.biographies.map((biography, index) => <Biography key={index} {...biography} />)}
+                                </div>
+                            </div>
+                        )
+                    })
                 }
             </div>
         </div>
     )
 }
-
-export default Biographies
