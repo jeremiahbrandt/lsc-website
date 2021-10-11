@@ -28,10 +28,27 @@ export async function getSiteConfig(): Promise<IConfig> {
   config.navigationLinks = []
 
   if (links.home) config.navigationLinks.push({ name: "Home", url: "/" })
-  if (links.about) config.navigationLinks.push({ name: "About", url: "/about" })
-  if (links.contact) config.navigationLinks.push({ name: "Contact", url: "/contact" })
   if (links.calendar) config.navigationLinks.push({ name: "Calendar", url: "/calendar" })
   if (links.videos) config.navigationLinks.push({ name: "Videos", url: "/videos" })
+  if (links.about) config.navigationLinks.push({
+    name: "About",
+    url: "/about",
+    dropdown: [
+      {
+        name: "Our Beliefs",
+        url: "/about#beliefs"
+      },
+      {
+        name: "History",
+        url: "/about#history"
+      },
+      {
+        name: "Staff",
+        url: "/about#staff"
+      },
+    ]
+  })
+  if (links.contact) config.navigationLinks.push({ name: "Contact", url: "/contact" })
 
   return config
 }
