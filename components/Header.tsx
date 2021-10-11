@@ -2,7 +2,6 @@ import Navigation from "./Navigation";
 import Link from "next/link";
 import React, { FC } from "react"
 import styles from "../css/Header.module.css"
-import { getNavigationLinks } from "../lib/navigation";
 import { INavigationLink } from "../interfaces/INavigationLink";
 
 export type HeaderProps = {
