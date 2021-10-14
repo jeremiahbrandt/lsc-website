@@ -33,13 +33,12 @@ export async function getStaticProps({ params }) {
  
 export async function getStaticPaths() {
   const paths = []
-
   const homePageContent = await getHomePageContent();
 
   homePageContent.firstSection.articles.forEach(article => {
     paths.push({
       params: {
-        slug: article.slug.replace(/\s+/g, '-').toLowerCase()
+        slug: article.slug.replace(/\s+/g, "-")
       }
     })
   })
@@ -47,7 +46,7 @@ export async function getStaticPaths() {
   homePageContent.secondSection.articles.forEach(article => {
     paths.push({
       params: {
-        slug: article.slug.replace(/\s+/g, '-').toLowerCase()
+        slug: article.slug.replace(/\s+/g, "-")
       }
     })
   })

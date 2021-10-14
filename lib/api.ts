@@ -7,6 +7,7 @@ import { IEmailCredentials } from "../interfaces/cmsQueries/objects/IEmailCreden
 import { IVideosPageContent } from "../interfaces/cmsQueries/pages/IVideosPageContent";
 import { IEvent } from "../interfaces/cmsQueries/objects/IEvent";
 import groq from "groq";
+import { getSlugDate } from "./util";
 
 export async function getSiteConfig(): Promise<IConfig> {
   const config = await client.fetch(`
@@ -91,15 +92,27 @@ export async function getHomePageContent(): Promise<IHomePageContent> {
   res.welcomeVideo.video.id = getVideoId(res.welcomeVideo.video.url);
   delete res.welcomeVideo.video.url;
 
+  res.firstSection.articles.forEach(article => {
+    const endpoint = article.name.replace(/\s+/g, "-");
+    article.slug = `${getSlugDate(article.startTime)}-${endpoint}`
+  });
+
+  res.secondSection.articles.forEach(article => {
+    const endpoint = article.name.replace(/\s+/g, "-");
+    article.slug = `${getSlugDate(article.startTime)}-${endpoint}`
+  });
+
   return res;
 }
 
 export async function getEvent(slug: string): Promise<IEvent> {
+  const slugParameter = slug.split("-").slice(3).join(' ');
+
   const content = await client.fetch(groq`
   *[_type == "homePage"] {
   	"article": 
       coalesce(
-      	firstSection.articles[slug == $slug] {
+      	firstSection.articles[name == $slug] {
           name,
           slug,
           startTime,
@@ -109,7 +122,7 @@ export async function getEvent(slug: string): Promise<IEvent> {
           "coverImage": coverImage.asset->url,
           description
         }[0],
-        secondSection.articles[slug == $slug] {
+        secondSection.articles[name == $slug] {
           name,
           slug,
           startTime,
@@ -122,12 +135,15 @@ export async function getEvent(slug: string): Promise<IEvent> {
 			)
 }[0]
 `, {
-    slug: slug
+    slug: slugParameter
   });
 
   if (content === null || content === undefined) {
     throw new Error("Event not found");
   }
+
+  const endpoint = content.article.name.replace(/\s+/g, "-");
+  content.article.slug = `${getSlugDate(content.article.startTime)}-${endpoint}`
 
   return content.article;
 }
@@ -177,6 +193,29 @@ export async function getVideosPageContent(): Promise<IVideosPageContent> {
   });
 
   return res;
+}
+
+export async function getCalendarPageEvents(): Promise<IEvent[]> {
+  const events = await client.fetch(`
+  *[_type=="calendarPage"][0] {
+    events[] {
+      content,
+      coverImage,
+      description,
+      endTime,
+      startTime,
+      name,
+      location,
+    }
+  }.events
+`);
+
+  events.forEach(event => {
+    const endpoint = event.name.replace(/\s+/g, "-");
+    event.slug = `${getSlugDate(event.date)}-${endpoint}`
+  });
+
+  return events
 }
 
 export async function getEmailCredentials(): Promise<IEmailCredentials> {
