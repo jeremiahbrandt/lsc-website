@@ -1,0 +1,25 @@
+Slideshow
+- Add captions
+- make arrows larger
+- send Anna pictures to edit and desired size
+- look into changing arrow picture
+Anna will make better logo
+Remove logos with text
+Make section titles larger
+Use better pictures
+Section pictures should not be cut off
+Facebook logo should say share
+
+Contact page
+- Remove italics
+- Use different fonts
+
+Three fonts for different purposes
+Change "About Us" to 60px
+- More white space "About Space" after and less after "History"
+
+Calendar Page
+- make smaller
+
+Videos Page
+- make smaller
